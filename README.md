@@ -23,9 +23,14 @@ For more information see the [WordPress API documentation](https://developer.wor
 
 The test calls that require authentication will be executed from the demo app. You have to configure the Oauth2Settings. See the ViewController.swift for more information. The calls that do not require authentication are tested from the unittests in EVWordPressAPITests.swift
 
-The network functionality is handled using the [Alamofire](https://github.com/Alamofire/Alamofire) library
-The API calls that require authentication will use the [AlamofireOauth2](https://github.com/evermeer/AlamofireOauth2) library (which is using the [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) library)
-Result object mapping is done using the [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects) library (which is using the [EVReflection](https://github.com/evermeer/EVReflection) library)
+#Dependencies
+The EVWordPressAPI is using the folowing (cocoapods) libraries:
+
+- The network functionality is handled using the [Alamofire](https://github.com/Alamofire/Alamofire) library.
+- The API calls that require authentication will use the [AlamofireOauth2](https://github.com/evermeer/AlamofireOauth2) library
+- The [AlamofireOauth2](https://github.com/evermeer/AlamofireOauth2) library is using the [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) library
+- Result object mapping is done using the [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects) library
+- The [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects) library is using the [EVReflection](https://github.com/evermeer/EVReflection) library
 
 #Progress
 This project started as a trial for [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects). There are more than 100 wordpress API callse. It will take some time to map all of these (help is welcome :) ). So far only the folowing API calles are implemented:
