@@ -1,6 +1,6 @@
 #EVWordPressAPI
 
-An implementation of the WordPress (Jetpack) API.
+A Swift implementation of the WordPress (Jetpack) API.
 
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/EVWordPressAPI.svg?style=flat)](https://github.com/evermeer/EVWordPressAPI/issues)
 [![Stars](https://img.shields.io/github/stars/evermeer/EVWordPressAPI.svg?style=flat)](https://github.com/evermeer/EVWordPressAPI/stargazers)
@@ -71,7 +71,7 @@ import EVWordPressAPI
 pod install
 ```
 
-3) Open the `EVWordPressAPI.xcworkspace` in Xcode and.
+3) Open the `EVWordPressAPI.xcworkspace` in Xcode.
 
 4) Create your own clientID and clientSecret at https://developer.wordpress.com/docs/oauth2/ 
 
@@ -89,7 +89,7 @@ api.posts([.number(19)], completionHandler: { posts in
 }
 ```
 
-There is also support for API calls that require authentication (OAuth2). For 
+There is also support for API calls that require authentication (OAuth2). Here is a sample code for that: 
 ```
 let wordpressOauth2Settings = Oauth2Settings(
     baseURL: "https://public-api.wordpress.com/rest/v1.1",
@@ -106,13 +106,13 @@ api.users(self, parameters:[.number(19), .authors_only(false)], completionHandle
 }
 ```
 
-All calls have a parameters array that can contain a list of an enum. The value itself will be passed on as the associated value. You only have to specify the parameters with none default values.
+All calls have a parameters array that can contain a list of an enum where the value will be passed on as the associated value. You only have to specify the parameters with none default values.
 
-All result objects have an error and a message property. These will have a value if something went wrong. These could contain the error information from the service (see documentation for each call) or it could contain "OAuth2 error" or  "Network error .." plus the message details.
+All result objects have an error and a message property. These will have a value if something went wrong. These could contain the error information from the service ([See the documentation](https://developer.wordpress.com/docs/api/) for each call). Besides that it could also contain "OAuth2 error" or  "Network error .." plus the message details.
 
 When authentication is required, then the method call will hava a parameter that should be populated with the active ViewController. The authentication webview will be created as a child of that viewcontroller.
 
-De API calls supported so far are:
+The API calls supported so far are:
 - https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
 - https://developer.wordpress.com/docs/api/1.1/get/me/
 - https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
