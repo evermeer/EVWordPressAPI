@@ -112,8 +112,5 @@ All result objects have an error and a message property. These will have a value
 
 When authentication is required, then the method call will hava a parameter that should be populated with the active ViewController. The authentication webview will be created as a child of that viewcontroller.
 
-The API calls supported so far are:
-- https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
-- https://developer.wordpress.com/docs/api/1.1/get/me/
-- https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
+
 
