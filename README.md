@@ -84,7 +84,7 @@ Below is the sample code for a simple call:
 
 ```
 let api = EVWordPressAPI(baseUrl: "https://public-api.wordpress.com/rest/v1.1", site: "evict.nl")
-api.posts([.number(19)], completionHandler: { posts in
+api.posts([.number(19)]) { posts in
     // now use the posts object
 }
 ```
@@ -101,7 +101,7 @@ let wordpressOauth2Settings = Oauth2Settings(
 )
 
 let api = EVWordPressAPI(wordpressOauth2Settings: self.wordpressOauth2Settings, site: "evict.nl")
-api.users(self, parameters:[.number(19), .authors_only(false)], completionHandler: { users in
+api.users(self, parameters:[.number(19), .authors_only(false)]) { users in
     // now use the users object
 }
 ```

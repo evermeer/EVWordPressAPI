@@ -52,7 +52,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Site object
     :return: No return value
     */
-    public func site(parameters:[siteParameters]?, completionHandler: (Site?) -> Void) {
+    public func site(parameters:[siteParameters]? = nil, completionHandler: (Site?) -> Void) {
         Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)", parameters: self.paramToDict(parameters))
             .responseObject { (response: Site?, error: NSError?) in
                 self.handleResponse(response, error: error, completionHandler: completionHandler)

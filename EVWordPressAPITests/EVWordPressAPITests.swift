@@ -40,7 +40,7 @@ class EVWordPressAPITests: XCTestCase {
     func testPosts() {
         let expectation = expectationWithDescription("")
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
-        api.posts([.number(19)], completionHandler: { result in
+        api.posts(parameters: [.number(19)]) { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
@@ -48,7 +48,7 @@ class EVWordPressAPITests: XCTestCase {
                 XCTAssertEqual(result?.posts.count ?? 0, 19, "Number of returned posts should be 19")
             }
             expectation.fulfill()
-        })
+        }
 
         waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
             XCTAssertNil(error, "\(error)")
@@ -58,7 +58,7 @@ class EVWordPressAPITests: XCTestCase {
     func testSite() {
         let expectation = expectationWithDescription("")
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
-        api.site(nil, completionHandler: { result in
+        api.site { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
@@ -66,7 +66,7 @@ class EVWordPressAPITests: XCTestCase {
                 XCTAssertEqual(result?.name ?? "", "E.V.I.C.T. B.V.", "Site name should be 'E.V.I.C.T. B.V.'")
             }
             expectation.fulfill()
-        })
+        }
         
         waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
             XCTAssertNil(error, "\(error)")
