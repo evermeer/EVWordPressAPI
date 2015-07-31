@@ -72,8 +72,8 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func users(viewController: UIViewController, parameters:[usersParameters]? = nil, completionHandler: (Users?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, viewController, { token in
+    public func users(parameters:[usersParameters]? = nil, completionHandler: (Users?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, { token in
             Alamofire.request(WordPressRequestConvertible.Users(token, self.paramToDict(parameters)))
                 .responseObject { (response: Users?, error: NSError?) in
                     self.handleResponse(response, error: error, completionHandler: completionHandler)
@@ -139,8 +139,8 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Suggestions object
     :return: No return value
     */
-    public func suggest(viewController: UIViewController, parameters:[suggestParameters]? = nil, completionHandler: (Suggestions?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, viewController, { token in
+    public func suggest(parameters:[suggestParameters]? = nil, completionHandler: (Suggestions?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, { token in
             Alamofire.request(WordPressRequestConvertible.Suggest(token, self.paramToDict(parameters)))
                 .responseObject { (response: Suggestions?, error: NSError?) in
                     self.handleResponse(response, error: error, completionHandler: completionHandler)
@@ -189,8 +189,8 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the User object
     :return: No return value
     */
-    public func me(viewController: UIViewController, parameters:[meParameters]? = nil, completionHandler: (User?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, viewController, { token in
+    public func me(parameters:[meParameters]? = nil, completionHandler: (User?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, { token in
             Alamofire.request(WordPressRequestConvertible.Me(token, self.paramToDict(parameters)))
                 .responseObject { (response: User?, error: NSError?) in
                     self.handleResponse(response, error: error, completionHandler: completionHandler)
@@ -238,8 +238,8 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the User object
     :return: No return value
     */
-    public func meLikes(viewController: UIViewController, parameters:[meLikesParameters]? = nil, completionHandler: (Likes?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, viewController, { token in
+    public func meLikes(parameters:[meLikesParameters]? = nil, completionHandler: (Likes?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, { token in
             Alamofire.request(WordPressRequestConvertible.MeLikes(token, self.paramToDict(parameters)))
                 .responseObject { (response: Likes?, error: NSError?) in
                     self.handleResponse(response, error: error, completionHandler: completionHandler)

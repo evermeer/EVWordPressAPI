@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func testUsers(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
-        api.users(self, parameters:[.number(19), .authors_only(false)]) { result in
+        api.users(parameters:[.number(19), .authors_only(false)]) { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction func testSuggest(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/users/suggest/
-        api.suggest(self) { result in
+        api.suggest { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
 
     @IBAction func testMe(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
-        api.me(self) { result in
+        api.me { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
 
     @IBAction func testMeLikes(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
-        api.meLikes(self) { result in
+        api.meLikes { result in
             if let err = result?.error, message = result?.message {
                 println("Warning: WordPress error \(err) : \(message)")
             } else {
