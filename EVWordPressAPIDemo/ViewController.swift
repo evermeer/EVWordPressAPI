@@ -84,6 +84,17 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func testShortcodes(sender: AnyObject) {
+        // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/shortcodes/
+        api.shortcodes { result in
+            if let err = result?.error, message = result?.message {
+                println("Warning: WordPress error \(err) : \(message)")
+            } else {
+                println("Number of shortcodes = \(result?.shortcodes?.count)")
+            }
+        }
+    }
+
     // ------------------------------------------------------------------------
     // MARK: - ...
     // ------------------------------------------------------------------------

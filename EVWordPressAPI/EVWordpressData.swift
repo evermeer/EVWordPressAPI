@@ -203,8 +203,7 @@ public class User: WPObject {
     var is_valid_google_apps_country: Bool = true
 }
 
-public class Suggestion: EVObject
-{
+public class Suggestion: EVObject {
     var ID: Int = 0
     var user_login: String?
     var display_name: String?
@@ -212,40 +211,34 @@ public class Suggestion: EVObject
     var image_URL: String?
 }
 
-public class Suggestions: WPObject
-{
+public class Suggestions: WPObject {
     var suggestions: [Suggestion]? = [Suggestion]()
 }
 
-public class Like: EVObject
-{
+public class Like: EVObject {
     var site_id: String?
     var post_id: String?
     var meta: Links?
     var added: String?
 }
 
-public class Likes: WPObject
-{
+public class Likes: WPObject {
     var found: Int = 0
     var likes: [Like]? = [Like]()
 }
 
-public class Icon: EVObject
-{
+public class Icon: EVObject {
     var img: String?
     var ico: String?
 }
 
-public class Logo: EVObject
-{
+public class Logo: EVObject {
     var id: Int = 0
     var sizes: [String]? = [String]()
     var url: String?
 }
 
-public class Site: WPObject
-{
+public class Site: WPObject {
     var ID: Int = 0
     var name: String?
     var _description: String?
@@ -257,4 +250,8 @@ public class Site: WPObject
     var is_private: Bool = false
     var is_following: Bool = false
     var meta: Meta?
+}
+
+public class Shortcodes: WPObject {
+    var shortcodes:[String]? = []
 }

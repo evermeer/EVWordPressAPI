@@ -17,6 +17,7 @@ enum WordPressRequestConvertible: URLRequestConvertible {
     case Suggest(String, Dictionary<String, AnyObject>?)
     case Me(String, Dictionary<String, AnyObject>?)
     case MeLikes(String, Dictionary<String, AnyObject>?)
+    case Shortcodes(String, Dictionary<String, AnyObject>?)
     
     var path: String {
         switch self {
@@ -25,13 +26,17 @@ enum WordPressRequestConvertible: URLRequestConvertible {
                 return "/sites/\(site)/users"
             }
             return "/sites/users"
-
         case .Suggest(let _, let _):
             return "/users/suggest"
         case .Me(let _, let _):
             return "/me"
         case .MeLikes(let _, let _):
             return "/me/likes"
+        case .Shortcodes(let _, let _):
+            if let site = WordPressRequestConvertible.site {
+                return "/sites/\(site)/shortcodes"
+            }
+            return "/sites/shortcodes"
         }
     }
 
@@ -45,6 +50,8 @@ enum WordPressRequestConvertible: URLRequestConvertible {
             return p
         case .MeLikes(let _, let p):
             return p
+        case .Shortcodes(let _, let p):
+            return p
         }
     }
 
@@ -57,6 +64,8 @@ enum WordPressRequestConvertible: URLRequestConvertible {
         case .Me(let t, let _):
             return t
         case .MeLikes(let t, let _):
+            return t
+        case .Shortcodes(let t, let _):
             return t
         }
     }
