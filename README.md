@@ -4,7 +4,7 @@ A Swift implementation of the WordPress (Jetpack) API.
 
 <!---
  [![Circle CI](https://img.shields.io/circleci/project/evermeer/EVWordPressAPI.svg?style=flat)](https://circleci.com/gh/evermeer/EVWordPressAPI)
- -->
+  -->
 [![Build Status](https://travis-ci.org/evermeer/EVWordPressAPI.svg?style=flat)](https://travis-ci.org/evermeer/EVWordPressAPI)
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/EVWordPressAPI.svg?style=flat)](https://github.com/evermeer/EVWordPressAPI/issues)
 [![Stars](https://img.shields.io/github/stars/evermeer/EVWordPressAPI.svg?style=flat)](https://github.com/evermeer/EVWordPressAPI/stargazers)
