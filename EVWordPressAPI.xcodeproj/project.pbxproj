@@ -33,6 +33,9 @@
 		7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Users.swift; sourceTree = "<group>"; };
 		7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Posts.swift; sourceTree = "<group>"; };
 		7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Sites.swift; sourceTree = "<group>"; };
+		7F159DFF1BA3140D00247CB1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7F159E001BA3140D00247CB1 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		7F159E011BA3140D00247CB1 /* circle.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.yml; sourceTree = "<group>"; };
 		7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressRequestConvertible.swift; sourceTree = "<group>"; };
 		7F7CFCF21B5F839100A42318 /* EVWordPressAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVWordPressAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CFCF61B5F839100A42318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +99,9 @@
 		7F7CFCE91B5F839100A42318 = {
 			isa = PBXGroup;
 			children = (
+				7F159DFF1BA3140D00247CB1 /* .gitignore */,
+				7F159E001BA3140D00247CB1 /* .travis.yml */,
+				7F159E011BA3140D00247CB1 /* circle.yml */,
 				7F7CFD171B5F84C300A42318 /* EVWordPressAPI.podspec */,
 				7F7CFD181B5F84C300A42318 /* LICENSE */,
 				7F7CFD191B5F84C300A42318 /* Podfile */,
