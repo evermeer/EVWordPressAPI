@@ -4,6 +4,6 @@ use_frameworks!
 link_with 'EVWordPressAPIDemo', 'EVWordPressAPITests'
 pod 'Alamofire'
 pod 'EVReflection'
-pod 'KeychainAccess'
+pod 'KeychainAccess', :git => 'https://github.com/kishikawakatsumi/KeychainAccess.git', :branch => 'swift-2.0'
 pod 'AlamofireOauth2'
 pod 'AlamofireJsonToObjects'
