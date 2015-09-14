@@ -52,17 +52,18 @@ public class EVWordPressAPI {
     
     // Convert a parameter array to a parameter dictionary
     internal func paramToDict<T:EVparam>(parameters: [T]?) -> Dictionary<String, AnyObject>? {
-        var result: Dictionary<String, AnyObject>? = (parameters != nil) ? Dictionary(parameters!.map({ $0.value })) : nil
+        let result: Dictionary<String, AnyObject>? = (parameters != nil) ? Dictionary(parameters!.map({ $0.value })) : nil
         return result
     }
 
     // move the error object into the response object
-    internal func handleResponse<T:WPObject>(response: T?, error:NSError?, completionHandler: (T?)-> Void) {
-        if error != nil {
-            response?.error = "Network error \(error!.code)"
-            response?.message = error!.description
+    internal func handleResponse<T:WPObject>(response: Result<T> , completionHandler: (T?)-> Void) {
+        if response.error != nil {
+            response.error.debugDescription
+            response.value?.error = "Network error \(response.error)"
+            response.value?.message = response.error.debugDescription
         }
-        completionHandler(response)
+        completionHandler(response.value)
     }
     
     // add an oauth error to the response object

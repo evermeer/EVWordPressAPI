@@ -1,26 +1,37 @@
 PODS:
-  - Alamofire (1.3.1)
-  - AlamofireJsonToObjects (1.0.1):
+  - Alamofire (2.0.0)
+  - AlamofireJsonToObjects (1.1.0):
     - Alamofire
     - EVReflection
-  - AlamofireOauth2 (1.0.2):
+  - AlamofireOauth2 (HEAD based on 1.0.2):
     - Alamofire
     - KeychainAccess
-  - EVReflection (2.6.0)
+  - EVReflection (2.7.0)
   - KeychainAccess (1.2.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireJsonToObjects
-  - AlamofireOauth2
+  - AlamofireOauth2 (HEAD)
   - EVReflection
-  - KeychainAccess
+  - KeychainAccess (from `https://github.com/kishikawakatsumi/KeychainAccess.git`,
+    branch `swift-2.0`)
+
+EXTERNAL SOURCES:
+  KeychainAccess:
+    :branch: swift-2.0
+    :git: https://github.com/kishikawakatsumi/KeychainAccess.git
+
+CHECKOUT OPTIONS:
+  KeychainAccess:
+    :commit: d1799b703b6b58e2d6ad7becb3cde620a20fcce2
+    :git: https://github.com/kishikawakatsumi/KeychainAccess.git
 
 SPEC CHECKSUMS:
-  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
-  AlamofireJsonToObjects: 95489893f2df0b8cad6abd72ac9a70b62c5f8a19
+  Alamofire: 2f13548b29d25a58ecd91c9225fb51493e2b782b
+  AlamofireJsonToObjects: 28094d29f794cf2c544f97f32345dc56560c94e5
   AlamofireOauth2: d842c50bb97c88f07d49467b46904e7d480f932a
-  EVReflection: e8f562eaa015ae14a4a2af640d06b6e89c0a925c
-  KeychainAccess: 3d7922baf90762a976adb7f6030d74c1a4110a1d
+  EVReflection: 2f468ee4e49edb0ff47472467d3ac3672361b0af
+  KeychainAccess: 2ffa8b1b7130263bb7fe90b359d778696fc2d8ce
 
 COCOAPODS: 0.38.2

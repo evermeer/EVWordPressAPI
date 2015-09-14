@@ -41,11 +41,11 @@ class ViewController: UIViewController {
     
     @IBAction func testUsers(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
-        api.users(parameters:[.number(19), .authors_only(false)]) { result in
+        api.users([.number(19), .authors_only(false)]) { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Number of users = \(result?.found), returend by call = \(result?.users?.count)")
+                print("Number of users = \(result?.found), returend by call = \(result?.users?.count)")
             }
         }
     }
@@ -54,9 +54,9 @@ class ViewController: UIViewController {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/users/suggest/
         api.suggest { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("WaprintWordPress error \(err) : \(message)")
             } else {
-                println("Number of suggestions returend by call = \(result?.suggestions?.count)")
+                print("Number of suggestions returend by call = \(result?.suggestions?.count)")
             }
         }
     }
@@ -66,9 +66,9 @@ class ViewController: UIViewController {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
         api.me { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Loged in as user = \(result?.display_name)")
+                print("Loged in as user = \(result?.display_name)")
             }
         }
     }
@@ -77,9 +77,9 @@ class ViewController: UIViewController {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
         api.meLikes { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Number of likes = \(result?.found), returend by call = \(result?.likes?.count)")
+                print("Number of likes = \(result?.found), returend by call = \(result?.likes?.count)")
             }
         }
     }
@@ -88,9 +88,9 @@ class ViewController: UIViewController {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/shortcodes/
         api.shortcodes { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Number of shortcodes = \(result?.shortcodes?.count)")
+                print("Number of shortcodes = \(result?.shortcodes?.count)")
             }
         }
     }

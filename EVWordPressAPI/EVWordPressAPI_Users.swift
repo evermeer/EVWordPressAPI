@@ -73,12 +73,12 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func users(parameters:[usersParameters]? = nil, completionHandler: (Users?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, { token in
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             Alamofire.request(WordPressRequestConvertible.Users(token, self.paramToDict(parameters)))
-                .responseObject { (response: Users?, error: NSError?) in
-                    self.handleResponse(response, error: error, completionHandler: completionHandler)
-            }
-            }, {
+                .responseObject { (result:Result<Users>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+                }
+            }, errorHandler: {
                 completionHandler(self.oauthError(Users()))
         })
     }
@@ -140,12 +140,12 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func suggest(parameters:[suggestParameters]? = nil, completionHandler: (Suggestions?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, { token in
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             Alamofire.request(WordPressRequestConvertible.Suggest(token, self.paramToDict(parameters)))
-                .responseObject { (response: Suggestions?, error: NSError?) in
-                    self.handleResponse(response, error: error, completionHandler: completionHandler)
-            }
-            }, {
+                .responseObject { (result:Result<Suggestions>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+                }
+            }, errorHandler: {
                 completionHandler(self.oauthError(Suggestions()))
         })
     }
@@ -190,12 +190,12 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func me(parameters:[meParameters]? = nil, completionHandler: (User?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, { token in
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             Alamofire.request(WordPressRequestConvertible.Me(token, self.paramToDict(parameters)))
-                .responseObject { (response: User?, error: NSError?) in
-                    self.handleResponse(response, error: error, completionHandler: completionHandler)
-            }
-            }, {
+                .responseObject { (result:Result<User>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+                }
+            }, errorHandler: {
                 completionHandler(self.oauthError(User()))
         })
     }
@@ -239,12 +239,12 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func meLikes(parameters:[meLikesParameters]? = nil, completionHandler: (Likes?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, { token in
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             Alamofire.request(WordPressRequestConvertible.MeLikes(token, self.paramToDict(parameters)))
-                .responseObject { (response: Likes?, error: NSError?) in
-                    self.handleResponse(response, error: error, completionHandler: completionHandler)
-            }
-            }, {
+                .responseObject { (result:Result<Likes>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+                }
+            }, errorHandler: {
                 completionHandler(self.oauthError(Likes()))
         })
     }

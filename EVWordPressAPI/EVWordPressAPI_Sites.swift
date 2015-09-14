@@ -54,9 +54,9 @@ public extension EVWordPressAPI {
     */
     public func site(parameters:[siteParameters]? = nil, completionHandler: (Site?) -> Void) {
         Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)", parameters: self.paramToDict(parameters))
-            .responseObject { (response: Site?, error: NSError?) in
-                self.handleResponse(response, error: error, completionHandler: completionHandler)
-        }
+            .responseObject { (result:Result<Site>) -> Void in
+                self.handleResponse(result, completionHandler: completionHandler)
+            }
     }
     
     
@@ -101,12 +101,12 @@ public extension EVWordPressAPI {
     :return: No return value
     */
     public func shortcodes(parameters:[shortcodesParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, { token in
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             Alamofire.request(WordPressRequestConvertible.Shortcodes(token, self.paramToDict(parameters)))
-                .responseObject { (response: Shortcodes?, error: NSError?) in
-                    self.handleResponse(response, error: error, completionHandler: completionHandler)
-            }
-            }, {
+                .responseObject { (result:Result<Shortcodes>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+                }
+            }, errorHandler: {
                 completionHandler(self.oauthError(Shortcodes()))
         })
     }

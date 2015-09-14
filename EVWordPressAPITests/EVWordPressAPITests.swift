@@ -9,6 +9,7 @@
 import UIKit
 import XCTest
 import AlamofireOauth2
+import EVReflection
 
 class EVWordPressAPITests: XCTestCase {
     
@@ -30,6 +31,7 @@ class EVWordPressAPITests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         self.api = EVWordPressAPI(baseUrl: self.baseUrl, site: "evict.nl")
+        EVReflection.setBundleIdentifier(Posts)
     }
     
     override func tearDown() {
@@ -40,19 +42,19 @@ class EVWordPressAPITests: XCTestCase {
     func testPosts() {
         let expectation = expectationWithDescription("")
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
-        api.posts(parameters: [.number(19)]) { result in
+        api.posts([.number(19)]) { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Number of posts = \(result?.found), returend by call = \(result?.posts.count)")
+                print("Number of posts = \(result?.found), returend by call = \(result?.posts.count)")
                 XCTAssertEqual(result?.posts.count ?? 0, 19, "Number of returned posts should be 19")
             }
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+        waitForExpectationsWithTimeout(10) { (error:NSError?) -> Void in
             XCTAssertNil(error, "\(error)")
-        })
+        }
     }
 
     func testSite() {
@@ -60,17 +62,17 @@ class EVWordPressAPITests: XCTestCase {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
         api.site { result in
             if let err = result?.error, message = result?.message {
-                println("Warning: WordPress error \(err) : \(message)")
+                print("Warning: WordPress error \(err) : \(message)")
             } else {
-                println("Site name = \(result?.name), description = \(result?._description)")
+                print("Site name = \(result?.name), description = \(result?._description)")
                 XCTAssertEqual(result?.name ?? "", "E.V.I.C.T. B.V.", "Site name should be 'E.V.I.C.T. B.V.'")
             }
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
             XCTAssertNil(error, "\(error)")
-        })
+        }
     }
     
 

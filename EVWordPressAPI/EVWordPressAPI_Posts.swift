@@ -123,8 +123,8 @@ public extension EVWordPressAPI {
     */
     public func posts(parameters:[postsParameters]? = nil, completionHandler: (Posts?) -> Void) {
         Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)/posts/", parameters: self.paramToDict(parameters))
-            .responseObject { (response: Posts?, error: NSError?) in
-                self.handleResponse(response, error: error, completionHandler: completionHandler)
+            .responseObject { (result:Result<Posts>) -> Void in
+            self.handleResponse(result, completionHandler: completionHandler)
         }
     }
     

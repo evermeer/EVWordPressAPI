@@ -154,7 +154,7 @@ public class Attachments: EVObject {
     
     // This way we can solve that the JSON has numeric fields that are used as keys
     public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
-        if let id = key.toInt(), dic = value as? NSDictionary {
+        if let _ = Int(key), dic = value as? NSDictionary {
             IDs.append(Attachment(dictionary: dic))
             return
         }
