@@ -59,7 +59,7 @@ class EVWordPressAPITests: XCTestCase {
 
     func testSite() {
         let expectation = expectationWithDescription("")
-        // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
+        // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/
         api.site { result in
             if let err = result?.error, message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
@@ -75,7 +75,11 @@ class EVWordPressAPITests: XCTestCase {
         }
     }
     
-
-    
-
+    func testEnum() {
+        let parameters:[usersParameters] = [.number(19), .authors_only(false)]
+        let y = WordPressRequestConvertible.MeLikes("XX", Dictionary(associated: parameters))
+        let label = y.associated.label
+        let (token, param) = y.associated.value as! (String, [String:AnyObject]?)
+        print("\(label) = {token = \(token), params = \(param)")
+    }
 }

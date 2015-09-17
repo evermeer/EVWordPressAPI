@@ -6,10 +6,10 @@
 //
 
 import Alamofire
-
+import EVReflection
 
 // Alamofire implementation. For more info see https://github.com/Alamofire/Alamofire#crud--authorization
-enum WordPressRequestConvertible: URLRequestConvertible {
+enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     static var baseURLString: String?
     static var site: String?
     
@@ -39,54 +39,21 @@ enum WordPressRequestConvertible: URLRequestConvertible {
             return "/sites/shortcodes"
         }
     }
-
-    var params: Dictionary<String, AnyObject>? {
-        switch self {
-        case .Users( _, let p):
-            return p
-        case .Suggest(_, let p):
-            return p
-        case .Me(_, let p):
-            return p
-        case .MeLikes(_, let p):
-            return p
-        case .Shortcodes(_, let p):
-            return p
-        }
-    }
-
-    var token: String? {
-        switch self {
-        case .Users(let t, _):
-            return t
-        case .Suggest(let t, _):
-            return t
-        case .Me(let t, _):
-            return t
-        case .MeLikes(let t, _):
-            return t
-        case .Shortcodes(let t, _):
-            return t
-        }
-    }
-
+    
     var URLRequest: NSMutableURLRequest { get
         {
             let URL = NSURL(string: WordPressRequestConvertible.baseURLString!)!
             let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
-            
             mutableURLRequest.HTTPMethod = "GET"
             
-            if let token = self.token {
-                mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            }
-            
-            if let parameters = self.params {
-                let encoding = Alamofire.ParameterEncoding.URL
-                return encoding.encode(mutableURLRequest, parameters: parameters).0
-            } else {
-                return mutableURLRequest
-            }
+            let (token, parameters) = self.associated.value as! (String, [String:AnyObject]?)
+
+            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            let encoding = Alamofire.ParameterEncoding.URL
+            return encoding.encode(mutableURLRequest, parameters: parameters).0
         }
     }
 }
+
+
+

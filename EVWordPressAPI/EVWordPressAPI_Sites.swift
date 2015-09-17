@@ -16,35 +16,6 @@ public extension EVWordPressAPI {
     
     
     /**
-    Parameters for the users call
-    */
-    public enum siteParameters: EVparam {
-        case http_envelope(Bool)
-        case pretty(Bool)
-        case meta(String)
-        case fields(String)
-        case callback(String)
-        
-        public var value: (String, AnyObject) {
-            get {
-                switch(self) {
-                case http_envelope(let b):
-                    return ("http_envelop", b)
-                case pretty(let b):
-                    return ("pretty", b)
-                case meta(let s):
-                    return ("meta", s)
-                case fields(let s):
-                    return ("fields", s)
-                case callback(let s):
-                    return ("callback", s)
-                }
-            }
-        }
-    }
-    
-    
-    /**
     Get information about a site.
     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/
     
@@ -52,46 +23,27 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Site object
     :return: No return value
     */
-    public func site(parameters:[siteParameters]? = nil, completionHandler: (Site?) -> Void) {
-        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)", parameters: self.paramToDict(parameters))
+    public func site(parameters:[basicParameters]? = nil, completionHandler: (Site?) -> Void) {
+        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)", parameters: Dictionary<String,AnyObject>(associated: parameters))
             .responseObject { (result:Result<Site>) -> Void in
                 self.handleResponse(result, completionHandler: completionHandler)
             }
     }
     
-    
-    
     /**
-    Parameters for the shortcodes call
-    */
-    public enum shortcodesParameters: EVparam {
-        case context(String)
-        case http_envelope(Bool)
-        case pretty(Bool)
-        case meta(String)
-        case fields(String)
-        case callback(String)
-        
-        public var value: (String, AnyObject) {
-            get {
-                switch(self) {
-                case context(let s):
-                    return ("context", s)
-                case http_envelope(let b):
-                    return ("http_envelop", b)
-                case pretty(let b):
-                    return ("pretty", b)
-                case meta(let s):
-                    return ("meta", s)
-                case fields(let s):
-                    return ("fields", s)
-                case callback(let s):
-                    return ("callback", s)
-                }
-            }
-        }
-    }
+    Get page templates for a site
+    See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/page-templates/
     
+    - parameter parameters: <#parameters description#>
+    */
+//    public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Template?) -> Void) {
+//        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)/page-templates", parameters: self.paramToDict(parameters))
+//            .responseObject { (result:Result<Template>) -> Void in
+//                self.handleResponse(result, completionHandler: completionHandler)
+//        }
+//    }
+    
+        
     /**
     Get the available shortcodes for a site
     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/shortcodes/
@@ -102,7 +54,7 @@ public extension EVWordPressAPI {
     */
     public func shortcodes(parameters:[shortcodesParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
         UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
-            Alamofire.request(WordPressRequestConvertible.Shortcodes(token, self.paramToDict(parameters)))
+            Alamofire.request(WordPressRequestConvertible.Shortcodes(token, Dictionary<String,AnyObject>(associated: parameters)))
                 .responseObject { (result:Result<Shortcodes>) -> Void in
                     self.handleResponse(result, completionHandler: completionHandler)
                 }
