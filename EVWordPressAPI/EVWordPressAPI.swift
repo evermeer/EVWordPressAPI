@@ -12,16 +12,6 @@ import AlamofireOauth2
 import AlamofireJsonToObjects
 import EVReflection
 
-extension Dictionary {
-    init(_ pairs: [Element]) {
-        self.init()
-        for (k, v) in pairs {
-            self[k] = v
-        }
-    }
-}
-
-
 public class EVWordPressAPI {
     
     public var wordpressOauth2Settings: Oauth2Settings
@@ -48,14 +38,6 @@ public class EVWordPressAPI {
     // MARK: - Generic internal functions
     // ------------------------------------------------------------------------
     
-//    // Convert a parameter array to a parameter dictionary
-//    internal func paramToDict<T:EVAssociated>(parameters: [T]?) -> Dictionary<String, AnyObject>? {
-//        if parameters == nil {
-//           return nil
-//        }
-//        return Dictionary(parameters!.map({($0.associated.label, $0.associated.value as! AnyObject) }))
-//    }
-//
     // move the error object into the response object
     internal func handleResponse<T:WPObject>(response: Result<T> , completionHandler: (T?)-> Void) {
         if response.error != nil {

@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         authorizeURL: "https://public-api.wordpress.com/oauth2/authorize",
         tokenURL: "https://public-api.wordpress.com/oauth2/token",
         redirectURL: "alamofireoauth2://wordpress/oauth_callback",
-        clientID: "??????",
-        clientSecret: "??????????"
+        clientID: "41739",
+        clientSecret: "31eC5no1cKXH3RS8sKfjv9WEpHiyvl24jvx0iXXwqc4Dajhq9OeAgRDazVoHtKtq"
     )
     
     var api:EVWordPressAPI!

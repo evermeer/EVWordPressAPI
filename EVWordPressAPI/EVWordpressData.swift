@@ -255,3 +255,19 @@ public class Site: WPObject {
 public class Shortcodes: WPObject {
     var shortcodes:[String]? = []
 }
+
+public class Template: EVObject {
+    var label: String?
+    var file: String?
+}
+
+public class Headers: EVObject {
+    var Date:String?
+    var Content_Type: String?
+}
+
+public class Templates: WPObject
+{
+    var templates: [Template]? = [Template]()
+    var _headers: Headers?
+}

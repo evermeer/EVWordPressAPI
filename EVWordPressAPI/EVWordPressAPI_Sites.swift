@@ -34,14 +34,15 @@ public extension EVWordPressAPI {
     Get page templates for a site
     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/page-templates/
     
-    - parameter parameters: <#parameters description#>
+    :parameter: parameters: an array of basicParameters. For a complete list plus documentation see the api documentation
+    :param: completionHandler A code block that will be called with the Template object
     */
-//    public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Template?) -> Void) {
-//        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)/page-templates", parameters: self.paramToDict(parameters))
-//            .responseObject { (result:Result<Template>) -> Void in
-//                self.handleResponse(result, completionHandler: completionHandler)
-//        }
-//    }
+    public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Templates?) -> Void) {
+        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)/page-templates", parameters: Dictionary<String,AnyObject>(associated: parameters))
+            .responseObject { (result:Result<Templates>) -> Void in
+                self.handleResponse(result, completionHandler: completionHandler)
+        }
+    }
     
         
     /**
@@ -50,7 +51,6 @@ public extension EVWordPressAPI {
     
     :param: parameters an array of shortcodesParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Shortcodes object
-    :return: No return value
     */
     public func shortcodes(parameters:[shortcodesParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
         UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
