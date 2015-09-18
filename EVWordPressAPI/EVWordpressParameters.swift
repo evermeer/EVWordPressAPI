@@ -126,6 +126,16 @@ public enum shortcodesRenderParameters: EVAssociated {
     case shortcode(String)
 }
 
-
-
+/**
+Parameters for the embedsRender call
+*/
+public enum embedsRenderParameters:EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case embed_url(String)
+}
 

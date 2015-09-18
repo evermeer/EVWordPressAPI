@@ -95,5 +95,22 @@ public extension EVWordPressAPI {
                 completionHandler(self.oauthError(Embeds()))
         })
     }
+
+    /**
+    Get an embeds render
     
+    :param: parameters an array of embedsRenderParameters. For complete list plus documentation see the api documentation
+    :param: completionHandler A code block that will be called with the EmbedsRender object
+    */
+    public func embedsRender(parameters:[embedsRenderParameters]? = nil, completionHandler: (EmbedsRender?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
+            Alamofire.request(WordPressRequestConvertible.ShortcodesRender(token, Dictionary<String,AnyObject>(associated: parameters)))
+                .responseObject { (result:Result<EmbedsRender>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+            }
+            }, errorHandler: {
+                completionHandler(self.oauthError(EmbedsRender()))
+        })
+    }
+
 }

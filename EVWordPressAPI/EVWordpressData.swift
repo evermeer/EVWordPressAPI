@@ -320,7 +320,10 @@ public class Embeds: WPObject {
     var embeds: [String]? = []
 }
 
-
+public class EmbedsRender: WPObject {
+    var embed_url: String?
+    var result: String?
+}
 
 
 
