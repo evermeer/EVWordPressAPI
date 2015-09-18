@@ -25,7 +25,7 @@ public extension EVWordPressAPI {
     :return: No return value
     */
     public func posts(parameters:[postsParameters]? = nil, completionHandler: (Posts?) -> Void) {
-        genericCall("/sites/\(self.site)/posts/", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)/posts/", parameters:parameters, completionHandler: completionHandler)
     }
     
 }

@@ -72,14 +72,30 @@ public class EVWordPressAPI {
                 completionHandler(self.oauthError(T()))
         })
     }
+
+    /**
+    Generic way to handle api calls
     
-    internal func genericCall<T:WPObject>(path:String, parameters:Dictionary<String,AnyObject>, completionHandler: (T?) -> Void) {
-        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + path, parameters: parameters)
+    :param: path the api url for the request
+    :param: parameters an array of parameters. For complete list plus documentation see the api documentation for the specific call
+    :param: completionHandler A code block that will be called with the result object
+    */
+    internal func genericCall<T:WPObject, P where P: EVAssociated>(path:String, parameters:[P]?, completionHandler: (T?) -> Void) {
+        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + path, parameters: Dictionary<String,AnyObject>(associated: parameters))
             .responseObject { (result:Result<T>) -> Void in
                 self.handleResponse(result, completionHandler: completionHandler)
         }
     }
-
-
+    
+    /**
+    Convert parameter array to dictionary
+    
+    - parameter parameters: parameter array
+    
+    - returns: parameter dictionary
+    */
+    internal func pdict<P where P: EVAssociated>(parameters:[P]?) -> Dictionary<String,AnyObject> {
+        return Dictionary(associated: parameters)
+    }
 }
 

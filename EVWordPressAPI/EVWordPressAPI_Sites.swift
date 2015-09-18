@@ -9,7 +9,7 @@
 import Alamofire
 import AlamofireOauth2
 import AlamofireJsonToObjects
-
+import EVReflection
 
 public extension EVWordPressAPI {
     // MARK: - Sites
@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :return: No return value
     */
     public func site(parameters:[basicParameters]? = nil, completionHandler: (Site?) -> Void) {
-        genericCall("/sites/\(self.site)", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)", parameters: parameters, completionHandler: completionHandler)
     }
     
     /**
@@ -35,7 +35,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Template object
     */
     public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Templates?) -> Void) {
-        genericCall("/sites/\(self.site)/page-templates", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)/page-templates", parameters: parameters, completionHandler: completionHandler)
     }
             
     /**
@@ -46,7 +46,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Shortcodes object
     */
     public func shortcodes(parameters:[basicContextParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
-        genericOauthCall(.Shortcodes(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.Shortcodes(pdict(parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -56,7 +56,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the ShortcodeRender object
     */
     public func shortcodesRender(parameters:[shortcodesRenderParameters]? = nil, completionHandler: (ShortcodesRender?) -> Void) {
-        genericOauthCall(.ShortcodesRender(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.ShortcodesRender(pdict(parameters)), completionHandler: completionHandler)
     }
     
     /**
@@ -66,7 +66,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Embeds object
     */
     public func embeds(parameters:[basicContextParameters]? = nil, completionHandler: (Embeds?) -> Void) {
-        genericOauthCall(.Embeds(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.Embeds(pdict(parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -76,7 +76,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the EmbedsRender object
     */
     public func embedsRender(parameters:[embedsRenderParameters]? = nil, completionHandler: (EmbedsRender?) -> Void) {
-        genericOauthCall(.EmbedsRender(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.EmbedsRender(pdict(parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -86,7 +86,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Embeds object
     */
     public func meSites(parameters:[meSitesParameters]? = nil, completionHandler: (Sites?) -> Void) {
-        genericOauthCall(.MeSites(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.MeSites(pdict(parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -96,7 +96,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Widgets object
     */
     public func widgets(parameters:[basicParameters]? = nil, completionHandler: (Widgets?) -> Void) {
-        genericCall("/sites/\(self.site)widgets", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)widgets", parameters: parameters, completionHandler: completionHandler)
     }
 
     /**
@@ -107,9 +107,6 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Widgets object
     */
     public func widget(id:String, parameters:[basicParameters]? = nil, completionHandler: (Widget?) -> Void) {
-        genericCall("/sites/\(self.site)widgets/widget:\(id)", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)widgets/widget:\(id)", parameters: parameters, completionHandler: completionHandler)
     }
-    
-
-
 }

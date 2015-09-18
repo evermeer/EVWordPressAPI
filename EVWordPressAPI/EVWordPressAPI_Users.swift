@@ -24,7 +24,7 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func users(parameters:[usersParameters]? = nil, completionHandler: (Users?) -> Void) {
-        genericOauthCall(.Users(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.Users(pdict(parameters)), completionHandler: completionHandler)
     }
     
     
@@ -38,7 +38,7 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func suggest(parameters:[suggestParameters]? = nil, completionHandler: (Suggestions?) -> Void) {
-        genericOauthCall(.Suggest(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.Suggest(pdict(parameters)), completionHandler: completionHandler)
     }
         
     
@@ -52,7 +52,7 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func me(parameters:[basicParameters]? = nil, completionHandler: (User?) -> Void) {
-        genericOauthCall(.Me(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.Me(pdict(parameters)), completionHandler: completionHandler)
     }
     
     
@@ -66,7 +66,7 @@ extension EVWordPressAPI {
     :return: No return value
     */
     public func meLikes(parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
-        genericOauthCall(.MeLikes(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+        genericOauthCall(.MeLikes(pdict(parameters)), completionHandler: completionHandler)
     }
     
     
