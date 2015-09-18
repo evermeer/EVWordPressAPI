@@ -21,6 +21,19 @@ public enum basicParameters: EVAssociated {
     case callback(String)
 }
 
+/**
+Parameters for the shortcodes call
+*/
+public enum basicContextParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+}
+
+
 
 // MARK: - Users
 
@@ -63,18 +76,6 @@ public enum suggestParameters: EVAssociated {
 
 // MARK: - Sites
 
-/**
-Parameters for the shortcodes call
-*/
-public enum shortcodesParameters: EVAssociated {
-    case context(String)
-    case http_envelope(Bool)
-    case pretty(Bool)
-    case meta(String)
-    case fields(String)
-    case callback(String)
-}
-
 
 // MARK: - Posts
 
@@ -111,6 +112,20 @@ public enum postsParameters: EVAssociated {
     case meta_key(String)
     case meta_value(String)
 }
+
+/**
+Parameters for the shortcodes call
+*/
+public enum shortcodesRenderParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case shortcode(String)
+}
+
 
 
 

@@ -271,3 +271,58 @@ public class Templates: WPObject
     var templates: [Template]? = [Template]()
     var _headers: Headers?
 }
+
+public class Script_Slug: EVObject {
+    var src: String?
+    var extra: String?
+}
+
+public class Style_Slug: EVObject {
+    var src: String?
+    var media: String?
+}
+
+public class Scripts: EVObject {
+    var scripts = [String: Script_Slug]()
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            scripts[key] = Script_Slug(dictionary: dic)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class Styles: EVObject {
+    var styles = [String: Style_Slug]()
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            styles[key] = Style_Slug(dictionary: dic)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class ShortcodesRender: WPObject {
+    var shortcode: String?
+    var result: String?
+    var scripts: Scripts?
+    var styles: Styles?
+    var _headers: Headers?
+}
+
+public class Embeds: WPObject {
+    var embeds: [String]? = []
+}
+
+
+
+
+
+
+

@@ -18,6 +18,7 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case Me(String, Dictionary<String, AnyObject>?)
     case MeLikes(String, Dictionary<String, AnyObject>?)
     case Shortcodes(String, Dictionary<String, AnyObject>?)
+    case ShortcodesRender(String, Dictionary<String, AnyObject>?)
     
     var path: String {
         switch self {
@@ -33,10 +34,9 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
         case .MeLikes(_,  _):
             return "/me/likes"
         case .Shortcodes(_,  _):
-            if let site = WordPressRequestConvertible.site {
-                return "/sites/\(site)/shortcodes"
-            }
-            return "/sites/shortcodes"
+            return "/sites/\(WordPressRequestConvertible.site)/shortcodes"
+        case .ShortcodesRender(_,  _):
+            return "/sites/\(WordPressRequestConvertible.site)/shortcodes/render"
         }
     }
     
