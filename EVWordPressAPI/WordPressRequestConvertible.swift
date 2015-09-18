@@ -12,31 +12,41 @@ import EVReflection
 enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     static var baseURLString: String?
     static var site: String?
+    static var token: String?
     
-    case Users(String, Dictionary<String, AnyObject>?)
-    case Suggest(String, Dictionary<String, AnyObject>?)
-    case Me(String, Dictionary<String, AnyObject>?)
-    case MeLikes(String, Dictionary<String, AnyObject>?)
-    case Shortcodes(String, Dictionary<String, AnyObject>?)
-    case ShortcodesRender(String, Dictionary<String, AnyObject>?)
+    case Users(Dictionary<String, AnyObject>?)
+    case Suggest(Dictionary<String, AnyObject>?)
+    case Me(Dictionary<String, AnyObject>?)
+    case MeLikes(Dictionary<String, AnyObject>?)
+    case Shortcodes(Dictionary<String, AnyObject>?)
+    case ShortcodesRender(Dictionary<String, AnyObject>?)
+    case Embeds(Dictionary<String, AnyObject>?)
+    case EmbedsRender(Dictionary<String, AnyObject>?)
+    case MeSites(Dictionary<String, AnyObject>?)
     
     var path: String {
         switch self {
-        case .Users( _, _):
+        case .Users(_):
             if let site = WordPressRequestConvertible.site {
                 return "/sites/\(site)/users"
             }
             return "/sites/users"
-        case .Suggest(_, _):
+        case .Suggest(_):
             return "/users/suggest"
-        case .Me(_,  _):
+        case .Me(_):
             return "/me"
-        case .MeLikes(_,  _):
+        case .MeLikes(_):
             return "/me/likes"
-        case .Shortcodes(_,  _):
+        case .Shortcodes(_):
             return "/sites/\(WordPressRequestConvertible.site)/shortcodes"
-        case .ShortcodesRender(_,  _):
+        case .ShortcodesRender(_):
             return "/sites/\(WordPressRequestConvertible.site)/shortcodes/render"
+        case .Embeds(_):
+            return "/sites/\(WordPressRequestConvertible.site)/embeds"
+        case .EmbedsRender(_):
+            return "/sites/\(WordPressRequestConvertible.site)/embeds/render"
+        case .MeSites(_):
+            return "/me/sites"
         }
     }
     
@@ -46,9 +56,10 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
             mutableURLRequest.HTTPMethod = "GET"
             
-            let (token, parameters) = self.associated.value as! (String, [String:AnyObject]?)
-
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            let parameters = self.associated.value as! [String:AnyObject]?
+            if let t = WordPressRequestConvertible.token {
+                mutableURLRequest.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
+            }
             let encoding = Alamofire.ParameterEncoding.URL
             return encoding.encode(mutableURLRequest, parameters: parameters).0
         }

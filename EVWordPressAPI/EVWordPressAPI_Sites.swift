@@ -24,10 +24,7 @@ public extension EVWordPressAPI {
     :return: No return value
     */
     public func site(parameters:[basicParameters]? = nil, completionHandler: (Site?) -> Void) {
-        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)", parameters: Dictionary<String,AnyObject>(associated: parameters))
-            .responseObject { (result:Result<Site>) -> Void in
-                self.handleResponse(result, completionHandler: completionHandler)
-            }
+        genericCall("/sites/\(self.site)", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
     }
     
     /**
@@ -38,10 +35,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Template object
     */
     public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Templates?) -> Void) {
-        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + "/sites/\(self.site)/page-templates", parameters: Dictionary<String,AnyObject>(associated: parameters))
-            .responseObject { (result:Result<Templates>) -> Void in
-                self.handleResponse(result, completionHandler: completionHandler)
-        }
+        genericCall("/sites/\(self.site)/page-templates", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
     }
             
     /**
@@ -52,14 +46,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Shortcodes object
     */
     public func shortcodes(parameters:[basicContextParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
-            Alamofire.request(WordPressRequestConvertible.Shortcodes(token, Dictionary<String,AnyObject>(associated: parameters)))
-                .responseObject { (result:Result<Shortcodes>) -> Void in
-                    self.handleResponse(result, completionHandler: completionHandler)
-                }
-        }, errorHandler: {
-            completionHandler(self.oauthError(Shortcodes()))
-        })
+        genericOauthCall(.Shortcodes(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -69,14 +56,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the ShortcodeRender object
     */
     public func shortcodesRender(parameters:[shortcodesRenderParameters]? = nil, completionHandler: (ShortcodesRender?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
-            Alamofire.request(WordPressRequestConvertible.ShortcodesRender(token, Dictionary<String,AnyObject>(associated: parameters)))
-                .responseObject { (result:Result<ShortcodesRender>) -> Void in
-                    self.handleResponse(result, completionHandler: completionHandler)
-            }
-        }, errorHandler: {
-            completionHandler(self.oauthError(ShortcodesRender()))
-        })
+        genericOauthCall(.ShortcodesRender(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
     }
     
     /**
@@ -86,14 +66,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Embeds object
     */
     public func embeds(parameters:[basicContextParameters]? = nil, completionHandler: (Embeds?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
-            Alamofire.request(WordPressRequestConvertible.ShortcodesRender(token, Dictionary<String,AnyObject>(associated: parameters)))
-                .responseObject { (result:Result<Embeds>) -> Void in
-                    self.handleResponse(result, completionHandler: completionHandler)
-            }
-            }, errorHandler: {
-                completionHandler(self.oauthError(Embeds()))
-        })
+        genericOauthCall(.Embeds(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
     }
 
     /**
@@ -103,14 +76,20 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the EmbedsRender object
     */
     public func embedsRender(parameters:[embedsRenderParameters]? = nil, completionHandler: (EmbedsRender?) -> Void) {
-        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
-            Alamofire.request(WordPressRequestConvertible.ShortcodesRender(token, Dictionary<String,AnyObject>(associated: parameters)))
-                .responseObject { (result:Result<EmbedsRender>) -> Void in
-                    self.handleResponse(result, completionHandler: completionHandler)
-            }
-            }, errorHandler: {
-                completionHandler(self.oauthError(EmbedsRender()))
-        })
+        genericOauthCall(.EmbedsRender(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
     }
+
+    /**
+    Get the list of embeds
+    
+    :param: parameters an array of basicContextParameters. For complete list plus documentation see the api documentation
+    :param: completionHandler A code block that will be called with the Embeds object
+    */
+    public func meSites(parameters:[meSitesParameters]? = nil, completionHandler: (Sites?) -> Void) {
+        genericOauthCall(.MeSites(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
+    }
+    
+    
+
 
 }

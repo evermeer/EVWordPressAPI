@@ -129,7 +129,7 @@ public enum shortcodesRenderParameters: EVAssociated {
 /**
 Parameters for the embedsRender call
 */
-public enum embedsRenderParameters:EVAssociated {
+public enum embedsRenderParameters: EVAssociated {
     case context(String)
     case http_envelope(Bool)
     case pretty(Bool)
@@ -139,3 +139,15 @@ public enum embedsRenderParameters:EVAssociated {
     case embed_url(String)
 }
 
+/**
+Parameters for the meSites call
+*/
+public enum meSitesParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case site_visibility(String)
+}

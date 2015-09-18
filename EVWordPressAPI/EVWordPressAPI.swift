@@ -54,6 +54,32 @@ public class EVWordPressAPI {
         return obj
     }
 
+    /**
+    Generic way to handle oauth api calls
+    
+    :param: request a specific WordPressRequestConvertible value for the request
+    :param: parameters an array of parameters. For complete list plus documentation see the api documentation for the specific call
+    :param: completionHandler A code block that will be called with the result object
+    */
+    internal func genericOauthCall<T:WPObject>(request:WordPressRequestConvertible, completionHandler: (T?) -> Void) {
+        UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
+            WordPressRequestConvertible.token = token
+            Alamofire.request(request)
+                .responseObject { (result:Result<T>) -> Void in
+                    self.handleResponse(result, completionHandler: completionHandler)
+            }
+            }, errorHandler: {
+                completionHandler(self.oauthError(T()))
+        })
+    }
+    
+    internal func genericCall<T:WPObject>(path:String, parameters:Dictionary<String,AnyObject>, completionHandler: (T?) -> Void) {
+        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + path, parameters: parameters)
+            .responseObject { (result:Result<T>) -> Void in
+                self.handleResponse(result, completionHandler: completionHandler)
+        }
+    }
+
 
 }
 

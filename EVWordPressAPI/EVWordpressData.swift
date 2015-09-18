@@ -325,6 +325,9 @@ public class EmbedsRender: WPObject {
     var result: String?
 }
 
+public class Sites: WPObject {
+    var sites: [Site]? = []
+}
 
 
 

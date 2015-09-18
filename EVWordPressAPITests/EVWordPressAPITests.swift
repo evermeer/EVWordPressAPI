@@ -77,9 +77,9 @@ class EVWordPressAPITests: XCTestCase {
     
     func testEnum() {
         let parameters:[usersParameters] = [.number(19), .authors_only(false)]
-        let y = WordPressRequestConvertible.MeLikes("XX", Dictionary(associated: parameters))
+        let y = WordPressRequestConvertible.MeLikes(Dictionary(associated: parameters))
         let label = y.associated.label
-        let (token, param) = y.associated.value as! (String, [String:AnyObject]?)
-        print("\(label) = {token = \(token), params = \(param)")
+        let param = y.associated.value as! [String:AnyObject]?
+        print("\(label), params = \(param)")
     }
 }
