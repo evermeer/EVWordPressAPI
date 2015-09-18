@@ -329,6 +329,18 @@ public class Sites: WPObject {
     var sites: [Site]? = []
 }
 
+public class Setting: EVObject {
+    
+}
 
+public class Widget: WPObject {
+    var id: String?
+    var sidebar: String?
+    var position: NSNumber?
+    var settings: [Setting]? = []
+}
 
+public class Widgets: WPObject {
+    var widgets: [Widget]? = []
+}
 

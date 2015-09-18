@@ -88,7 +88,27 @@ public extension EVWordPressAPI {
     public func meSites(parameters:[meSitesParameters]? = nil, completionHandler: (Sites?) -> Void) {
         genericOauthCall(.MeSites(Dictionary<String,AnyObject>(associated: parameters)), completionHandler: completionHandler)
     }
+
+    /**
+    Get the list of widgets
     
+    :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation
+    :param: completionHandler A code block that will be called with the Widgets object
+    */
+    public func widgets(parameters:[basicParameters]? = nil, completionHandler: (Widgets?) -> Void) {
+        genericCall("/sites/\(self.site)widgets", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+    }
+
+    /**
+    Get the settings of a widget
+    
+    :param: id A specific widget id.
+    :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
+    :param: completionHandler A code block that will be called with the Widgets object
+    */
+    public func widget(id:String, parameters:[basicParameters]? = nil, completionHandler: (Widget?) -> Void) {
+        genericCall("/sites/\(self.site)widgets/widget:\(id)", parameters: Dictionary<String,AnyObject>(associated: parameters), completionHandler: completionHandler)
+    }
     
 
 
