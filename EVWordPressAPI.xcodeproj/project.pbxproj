@@ -11,6 +11,8 @@
 		34F8D345B1B84C9143635E64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7F05E8B01BAFEE010046AB5C /* EVWordpressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordpressAPI_Comments.swift */; settings = {ASSET_TAGS = (); }; };
 		7F05E8B11BAFF13E0046AB5C /* EVWordpressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordpressAPI_Comments.swift */; settings = {ASSET_TAGS = (); }; };
+		7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; settings = {ASSET_TAGS = (); }; };
+		7F05E8B41BB000090046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; settings = {ASSET_TAGS = (); }; };
 		7F0E6DC31BA75BCB0071AC65 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; settings = {ASSET_TAGS = (); }; };
 		7F139E9E1B6A18FC00D32731 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; };
 		7F139EA01B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */; };
@@ -36,6 +38,7 @@
 /* Begin PBXFileReference section */
 		450FD17338218F5D03655DE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7F05E8AF1BAFEE010046AB5C /* EVWordpressAPI_Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordpressAPI_Comments.swift; sourceTree = "<group>"; };
+		7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Taxonomy.swift; sourceTree = "<group>"; };
 		7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Users.swift; sourceTree = "<group>"; };
 		7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Posts.swift; sourceTree = "<group>"; };
 		7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Sites.swift; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 				7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */,
 				7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */,
 				7F05E8AF1BAFEE010046AB5C /* EVWordpressAPI_Comments.swift */,
+				7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */,
 			);
 			path = EVWordPressAPI;
 			sourceTree = "<group>";
@@ -388,6 +392,7 @@
 				7F139EA21B6A20EE00D32731 /* EVWordPressAPI_Sites.swift in Sources */,
 				7F05E8B01BAFEE010046AB5C /* EVWordpressAPI_Comments.swift in Sources */,
 				7F7CFCFA1B5F839100A42318 /* ViewController.swift in Sources */,
+				7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */,
 				7F159E031BA6E16C00247CB1 /* EVWordpressParameters.swift in Sources */,
 				7F7CFCF81B5F839100A42318 /* AppDelegate.swift in Sources */,
 				7F139E9E1B6A18FC00D32731 /* EVWordPressAPI_Users.swift in Sources */,
@@ -400,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F05E8B41BB000090046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */,
 				7F7CFD0E1B5F839100A42318 /* EVWordPressAPITests.swift in Sources */,
 				7F05E8B11BAFF13E0046AB5C /* EVWordpressAPI_Comments.swift in Sources */,
 				7F655AFB1B68A231003FF992 /* WordPressRequestConvertible.swift in Sources */,

@@ -117,33 +117,35 @@ public class Capabilities: EVObject {
 }
 
 
-public class Categories: EVObject {
-    var categories = [Categorie]()
+public class Categories: WPObject {
+    var found: Int = 0
+    var categories = [Taxonomy]()
     
     // This way we can solve that the JSON uses values for keys
     public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
-            categories.append(Categorie(dictionary: dic))
+            categories.append(Taxonomy(dictionary: dic))
             return
         }
         NSLog("---> setValue for key '\(key)' should be handled.")
     }
 }
 
-public class Tags: EVObject {
-    var tags = [Categorie]()
+public class Tags: WPObject {
+    var found: Int = 0
+    var tags = [Taxonomy]()
     
     // This way we can solve that the JSON uses values for keys
     public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
-            tags.append(Categorie(dictionary: dic))
+            tags.append(Taxonomy(dictionary: dic))
             return
         }
         NSLog("---> setValue for key '\(key)' should be handled.")
     }
 }
 
-public class Categorie: EVObject {
+public class Taxonomy: WPObject {
     var ID: Int = 0
     var name: String?
     var slug: String?

@@ -44,7 +44,7 @@ API sections - status (for now only the get calls)
 - Sites - all 11 get calls implemented
 - Posts - all 6 get calls implemented
 - Comments - all 5 get calls implemented
-- Taxonomy - to do
+- Taxonomy - al 4 get calls implemented
 - Follow - to do
 - Freshly Pressed - to do
 - Notifications - to do
