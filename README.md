@@ -42,7 +42,7 @@ This project started as a trial for [AlamofireJsonToObjects](https://github.com/
 API sections
 - Users - all 4 calls
 - Sites - all 11 get calls, 4 post calls to do
-- Posts - The posts api call
+- Posts - all 6 get calls, 8 post calls to do
 - Comments - to do
 - Taxonomy - to do
 - Follow - to do

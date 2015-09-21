@@ -216,6 +216,15 @@ public class Suggestions: WPObject {
 }
 
 public class Like: EVObject {
+    var ID: Int = 0
+    var login: String?
+    var email: Bool = false
+    var name: String?
+    var nice_name: String?
+    var URL: String?
+    var avatar_URL: String?
+    var profile_URL:  String?
+    var default_vavatar: Bool = false
     var site_id: String?
     var post_id: String?
     var meta: Links?
@@ -224,7 +233,12 @@ public class Like: EVObject {
 
 public class Likes: WPObject {
     var found: Int = 0
+    var i_like: Bool = false
+    var like_count: Int = 0
+    var site_ID: Int = 0
+    var post_ID: Int = 0
     var likes: [Like]? = [Like]()
+    var meta: Meta?
 }
 
 public class Icon: EVObject {
@@ -353,3 +367,11 @@ public class Header: WPObject {
     var height: Int = 0
     var defaults: String?
 }
+
+public class Reblogs: WPObject {
+    var is_reblogged: Bool = false
+    var meta: Meta?
+    var ID: Int = 0
+}
+
+
