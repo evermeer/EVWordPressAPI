@@ -173,7 +173,9 @@ public enum commentsParameters: EVAssociated {
     case status(String)
 }
 
-
+/**
+Parameters for the tags call
+*/
 public enum tagsParameters: EVAssociated {
     case context(String)
     case http_envelope(Bool)
@@ -188,3 +190,36 @@ public enum tagsParameters: EVAssociated {
     case order(String)
     case order_by(String)
 }
+
+/**
+Parameters for the follows call
+*/
+public enum followsParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case page(Int)
+    case number(Int)
+}
+
+/**
+Parameters for the freshlyPressed call
+*/
+public enum freshlyPressedParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case number(Int)
+    case after(NSDate)
+    case before(NSDate)
+    case content_width(Int)
+    case thumb_width(Int)
+    case thumb_height(Int)
+}
+

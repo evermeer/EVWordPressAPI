@@ -23,14 +23,13 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case Embeds(Dictionary<String, AnyObject>?)
     case EmbedsRender(Dictionary<String, AnyObject>?)
     case MeSites(Dictionary<String, AnyObject>?)
+    case Follows(Dictionary<String, AnyObject>?)
+    case FollowsMine(Dictionary<String, AnyObject>?)
     
     var path: String {
         switch self {
         case .Users(_):
-            if let site = WordPressRequestConvertible.site {
-                return "/sites/\(site)/users"
-            }
-            return "/sites/users"
+            return "/sites/\(WordPressRequestConvertible.site)/users"
         case .Suggest(_):
             return "/users/suggest"
         case .Me(_):
@@ -47,6 +46,10 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             return "/sites/\(WordPressRequestConvertible.site)/embeds/render"
         case .MeSites(_):
             return "/me/sites"
+        case .Follows(_):
+            return "/sites/\(WordPressRequestConvertible.site)/follows"
+        case .FollowsMine(_):
+            return "/sites/\(WordPressRequestConvertible.site)/follows/mine"
         }
     }
     

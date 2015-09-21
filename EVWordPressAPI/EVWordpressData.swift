@@ -63,6 +63,12 @@ public class Post: WPObject {
     var page_template: String?
     var attachment_count: Int = 0
     var discussion: Discussion?
+    var pseudo_ID: String?
+    var is_external: Bool = false
+    var site_name: String?
+    var site_is_private: String?
+    var featured_Media: Attachment?
+    var editorial: Editorial?
 }
 
 public class Discussion: EVObject {
@@ -400,4 +406,35 @@ public class Comment: WPObject {
     var like_count: Int = 0
     var i_like: Bool = false
     var meta: Meta?
+}
+
+public class Following: WPObject {
+    var is_following: Bool = false
+    var meta: Meta?
+}
+
+public class FreshlyPressed: Post {
+    var date_range:DateRange?
+    var number: Int = 0
+    var posts: [Post]? = []
+}
+
+public class DateRange: EVObject {
+    var oldest: NSDate?
+    var newest: NSDate?
+}
+
+public class Editorial: EVObject {
+    var blog_id: String?
+    var post_id:String?
+    var image: String?
+    var custom_headline: String?
+    var custom_blog_title: String?
+    var displayed_on: NSDate?
+    var picked_on: NSDate?
+    var highlight_topic: String?
+    var highlight_topic_title: String?
+    var screen_offset: Int = 0
+    var blog_name: String?
+    var site_id: Int = 0
 }
