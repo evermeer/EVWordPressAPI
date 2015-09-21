@@ -17,6 +17,8 @@
 		7F05E8B71BB0215B0046AB5C /* EVWordPressAPI_Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */; settings = {ASSET_TAGS = (); }; };
 		7F05E8B91BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; settings = {ASSET_TAGS = (); }; };
 		7F05E8BA1BB025890046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; settings = {ASSET_TAGS = (); }; };
+		7F05E8BC1BB02D190046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; settings = {ASSET_TAGS = (); }; };
+		7F05E8BD1BB035120046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; settings = {ASSET_TAGS = (); }; };
 		7F0E6DC31BA75BCB0071AC65 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; settings = {ASSET_TAGS = (); }; };
 		7F139E9E1B6A18FC00D32731 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; };
 		7F139EA01B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */; };
@@ -45,6 +47,7 @@
 		7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Taxonomy.swift; sourceTree = "<group>"; };
 		7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Follow.swift; sourceTree = "<group>"; };
 		7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_FreshlyPressed.swift; sourceTree = "<group>"; };
+		7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Insights.swift; sourceTree = "<group>"; };
 		7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Users.swift; sourceTree = "<group>"; };
 		7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Posts.swift; sourceTree = "<group>"; };
 		7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Sites.swift; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 				7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */,
 				7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */,
 				7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */,
+				7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */,
 			);
 			path = EVWordPressAPI;
 			sourceTree = "<group>";
@@ -401,6 +405,7 @@
 				7F139EA21B6A20EE00D32731 /* EVWordPressAPI_Sites.swift in Sources */,
 				7F05E8B01BAFEE010046AB5C /* EVWordPressAPI_Comments.swift in Sources */,
 				7F05E8B91BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */,
+				7F05E8BC1BB02D190046AB5C /* EVWordPressAPI_Insights.swift in Sources */,
 				7F7CFCFA1B5F839100A42318 /* ViewController.swift in Sources */,
 				7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */,
 				7F159E031BA6E16C00247CB1 /* EVWordpressParameters.swift in Sources */,
@@ -427,6 +432,7 @@
 				7F05E8B71BB0215B0046AB5C /* EVWordPressAPI_Follow.swift in Sources */,
 				7F3A9B541B679A7200E79076 /* EVWordPressAPI.swift in Sources */,
 				7F139EA31B6A248200D32731 /* EVWordPressAPI_Posts.swift in Sources */,
+				7F05E8BD1BB035120046AB5C /* EVWordPressAPI_Insights.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

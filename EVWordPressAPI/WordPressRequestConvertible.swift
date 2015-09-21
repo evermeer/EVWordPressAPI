@@ -25,6 +25,8 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case MeSites(Dictionary<String, AnyObject>?)
     case Follows(Dictionary<String, AnyObject>?)
     case FollowsMine(Dictionary<String, AnyObject>?)
+    case Insights(Dictionary<String, AnyObject>?)
+    case InsightsSlug(Dictionary<String, AnyObject>?, String)
     
     var path: String {
         switch self {
@@ -50,6 +52,10 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             return "/sites/\(WordPressRequestConvertible.site)/follows"
         case .FollowsMine(_):
             return "/sites/\(WordPressRequestConvertible.site)/follows/mine"
+        case .Insights(_):
+            return "/insights"
+        case .InsightsSlug(_, let slug):
+            return "/insights\(slug)"
         }
     }
     
@@ -59,7 +65,14 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
             mutableURLRequest.HTTPMethod = "GET"
             
-            let parameters = self.associated.value as! [String:AnyObject]?
+            var parameters = self.associated.value as? [String:AnyObject]
+            if parameters == nil {
+                if (self.associated.value as? ([String:AnyObject]?, String)) != nil {
+                    let (param, _) = (self.associated.value as? ([String:AnyObject]?, String))!
+                    parameters = param
+                }
+            }
+            
             if let t = WordPressRequestConvertible.token {
                 mutableURLRequest.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
             }

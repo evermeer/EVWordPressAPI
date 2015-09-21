@@ -438,3 +438,31 @@ public class Editorial: EVObject {
     var blog_name: String?
     var site_id: Int = 0
 }
+
+public class Insights: WPObject {
+    var ID: Int = 0
+    var name: String?
+    var insights: [String]? = []
+    var today: Today?
+    var has_custom: Bool = false
+}
+
+public class Stat: EVObject {
+    var number: Int = 0
+    var percent: String?
+}
+
+public class Today: EVObject {
+    var today = [String: Stat]()
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            today[key] = Stat(dictionary: dic)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+

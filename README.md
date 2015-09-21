@@ -47,8 +47,8 @@ API sections - status (for now only the get calls)
 - Taxonomy - all 4 get calls implemented
 - Follow - all 2 get calls implemented
 - Freshly Pressed - the 1 get call implemented
-- Notifications - to do
-- Insights - to do
+- Notifications - only has posts
+- Insights - the 2 get calls implemented
 - Reader - to do
 - Stats - to do
 - Media - to do
