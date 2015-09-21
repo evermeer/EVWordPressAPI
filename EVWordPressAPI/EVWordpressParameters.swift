@@ -151,3 +151,24 @@ public enum meSitesParameters: EVAssociated {
     case callback(String)
     case site_visibility(String)
 }
+
+/**
+Parameters for the shortcodes call
+*/
+public enum commentsParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case number(Int)
+    case offset(Int)
+    case page(Int)
+    case order(String)
+    case hierarchical(Bool)
+    case after(NSDate)
+    case before(NSDate)
+    case type(String)
+    case status(String)
+}

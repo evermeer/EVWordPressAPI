@@ -26,6 +26,7 @@ public class Post: WPObject {
     var modified: String?
     var title: String?
     var URL: String?
+    var link: String?
     var short_URL: String?
     var content: String?
     var excerpt: String?
@@ -99,11 +100,14 @@ public class Metadata: EVObject {
 
 public class Author: EVObject {
     var ID: Int = 0
+    var login: String?
     var email: Bool = false
     var name: String?
+    var nice_name: String?
     var URL: String?
     var avatar_URL: String?
     var profile_URL: String?
+    var site_ID: String?
 }
 
 public class Capabilities: EVObject {
@@ -374,4 +378,24 @@ public class Reblogs: WPObject {
     var ID: Int = 0
 }
 
+public class Comments: WPObject {
+    var found: Int = 0
+    var site_ID: Int = 0
+    var comments: [Comment]? = []
+}
 
+public class Comment: WPObject {
+    var ID: Int = 0
+    var post: Post?
+    var author: Author?
+    var date: NSDate?
+    var URL: String?
+    var short_URL: String?
+    var content: String?
+    var status: String?
+    var parent: Bool = false
+    var type: String?
+    var like_count: Int = 0
+    var i_like: Bool = false
+    var meta: Meta?
+}

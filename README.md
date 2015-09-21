@@ -39,11 +39,11 @@ The EVWordPressAPI is using the folowing (cocoapods) libraries:
 #Progress
 This project started as a trial for [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects). There are more than 100 wordpress API callse. It will take some time to map all of these (help is welcome :) ). So far only the folowing API calles are implemented:
 
-API sections
-- Users - all 4 calls
-- Sites - all 11 get calls, 4 post calls to do
-- Posts - all 6 get calls, 8 post calls to do
-- Comments - to do
+API sections - status (for now only the get calls)
+- Users - all 4 get calls implemented
+- Sites - all 11 get calls implemented
+- Posts - all 6 get calls implemented
+- Comments - all 5 get calls implemented
 - Taxonomy - to do
 - Follow - to do
 - Freshly Pressed - to do
@@ -55,6 +55,7 @@ API sections
 - Menus - to do
 - Batch - to do
 - Videos - to do
+
 
 
 ## Using EVWordPressAPI in your own App 
