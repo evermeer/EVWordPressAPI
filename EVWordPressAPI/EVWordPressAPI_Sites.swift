@@ -96,7 +96,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Widgets object
     */
     public func widgets(parameters:[basicParameters]? = nil, completionHandler: (Widgets?) -> Void) {
-        genericCall("/sites/\(self.site)widgets", parameters: parameters, completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)/widgets", parameters: parameters, completionHandler: completionHandler)
     }
 
     /**
@@ -107,6 +107,30 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Widgets object
     */
     public func widget(id:String, parameters:[basicParameters]? = nil, completionHandler: (Widget?) -> Void) {
-        genericCall("/sites/\(self.site)widgets/widget:\(id)", parameters: parameters, completionHandler: completionHandler)
+        genericCall("/sites/\(self.site)/widgets/widget:\(id)", parameters: parameters, completionHandler: completionHandler)
     }
+
+    /**
+    Get the custom header options for a site with a particular theme.
+    
+    :param: themeSlug: The slug of the theme
+    :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
+    :param: completionHandler A code block that will be called with the Widgets object
+    */
+    public func headersForTheme(themeSlug:String, parameters:[basicContextParameters]? = nil, completionHandler: (Header?) -> Void) {
+        genericCall("/sites/\(self.site)/headers/\(themeSlug)", parameters: parameters, completionHandler: completionHandler)
+    }
+
+    /**
+    Get the custom header options for a site.
+    
+    :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
+    :param: completionHandler A code block that will be called with the Widgets object
+    */
+    public func headers(parameters:[basicContextParameters]? = nil, completionHandler: (Header?) -> Void) {
+        genericCall("/sites/\(self.site)/headers/mine", parameters: parameters, completionHandler: completionHandler)
+    }
+
 }
+
+

@@ -344,3 +344,12 @@ public class Widgets: WPObject {
     var widgets: [Widget]? = []
 }
 
+public class Header: WPObject {
+    var random_default: Bool = false
+    var random_uploaded: Bool = false
+    var text_color: String?
+    var url: String?
+    var width: Int = 0
+    var height: Int = 0
+    var defaults: String?
+}
