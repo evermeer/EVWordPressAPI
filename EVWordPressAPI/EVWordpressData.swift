@@ -465,4 +465,30 @@ public class Today: EVObject {
     }
 }
 
+public class MenuItem: EVObject {
+    var ID: Int = 0
+    var title: String?
+    var URL: String?
+    var slug: String?
+}
+
+public class Items: EVObject {
+    var list:[String:MenuItem] = [String:MenuItem]()
+
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            list[key] = MenuItem(dictionary: dic)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+    
+}
+
+public class Menu: WPObject {
+    var _default: Items?
+    var subscribed: Items?
+    var recommended: Items?
+}
 

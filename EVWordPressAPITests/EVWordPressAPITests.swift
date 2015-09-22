@@ -75,11 +75,32 @@ class EVWordPressAPITests: XCTestCase {
         }
     }
     
+    func testReadMenu() {
+        let expectation = expectationWithDescription("")
+        api.readMenu { result in
+            if let err = result?.error, message = result?.message {
+                print("Warning: WordPress error \(err) : \(message)")
+            } else {
+                print("default = \(result?._default), subscribed = \(result?.subscribed), recommended = \(result?.recommended)")
+                XCTAssertTrue(result?.recommended?.list.count > 10, "Menu should return more than 10 items")
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+            XCTAssertNil(error, "\(error)")
+        }
+        
+    }
+    
     func testEnum() {
         let parameters:[usersParameters] = [.number(19), .authors_only(false)]
         let y = WordPressRequestConvertible.MeLikes(Dictionary(associated: parameters))
-        let label = y.associated.label
-        let param = y.associated.value as! [String:AnyObject]?
+        let associated = y.associated
+        let label = associated.label
+        let value = associated.value
+        NSLog("\(value) - \(value.dynamicType)")
+        let param = associated.value as! [String:AnyObject]?
         print("\(label), params = \(param)")
     }
 }
