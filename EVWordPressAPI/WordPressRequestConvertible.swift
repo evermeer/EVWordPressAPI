@@ -27,6 +27,9 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case FollowsMine(Dictionary<String, AnyObject>?)
     case Insights(Dictionary<String, AnyObject>?)
     case InsightsSlug(Dictionary<String, AnyObject>?, String)
+    case TagStatus(Dictionary<String, AnyObject>?, String)
+    case Following(Dictionary<String, AnyObject>?)
+    case Recommendations(Dictionary<String, AnyObject>?)
     
     var path: String {
         switch self {
@@ -56,6 +59,12 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             return "/insights"
         case .InsightsSlug(_, let slug):
             return "/insights\(slug)"
+        case .TagStatus(_, let tag):
+            return "/read/tags/\(tag)/mine"
+        case .Following(_):
+            return "/read/following/mine"
+        case .Recommendations(_):
+            return "/read/recommendations/mine"
         }
     }
     

@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func freshlyPressed(parameters:[basicContextParameters]? = nil, completionHandler: (FreshlyPressed?) -> Void) {
+    public func freshlyPressed(parameters:[basicContextParameters]? = nil, completionHandler: (Posts?) -> Void) {
         genericCall("/freshly-pressed", parameters:parameters, completionHandler: completionHandler)
     }
 }

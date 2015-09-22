@@ -14,6 +14,8 @@ public class WPObject: EVObject {
 
 public class Posts: WPObject {
     var found: Int = 0
+    var date_range:DateRange?
+    var number: Int = 0
     var posts: [Post] = [Post]()
     var meta: Meta?
 }
@@ -137,9 +139,13 @@ public class Categories: WPObject {
     }
 }
 
+public class TagsWrapper: WPObject {
+    var tags:Tags?
+}
+
 public class Tags: WPObject {
     var found: Int = 0
-    var tags = [Taxonomy]()
+    var tags:[Taxonomy] = [Taxonomy]()
     
     // This way we can solve that the JSON uses values for keys
     public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
@@ -154,6 +160,7 @@ public class Tags: WPObject {
 public class Taxonomy: WPObject {
     var ID: Int = 0
     var name: String?
+    var title: String?
     var slug: String?
     var _description: String?
     var post_count: Int = 0
@@ -413,12 +420,6 @@ public class Following: WPObject {
     var meta: Meta?
 }
 
-public class FreshlyPressed: Post {
-    var date_range:DateRange?
-    var number: Int = 0
-    var posts: [Post]? = []
-}
-
 public class DateRange: EVObject {
     var oldest: NSDate?
     var newest: NSDate?
@@ -465,7 +466,7 @@ public class Today: EVObject {
     }
 }
 
-public class MenuItem: EVObject {
+public class Item: WPObject {
     var ID: Int = 0
     var title: String?
     var URL: String?
@@ -473,12 +474,12 @@ public class MenuItem: EVObject {
 }
 
 public class Items: EVObject {
-    var list:[String:MenuItem] = [String:MenuItem]()
+    var list:[String:Item] = [String:Item]()
 
     // This way we can solve that the JSON has arbitrary keys
     public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
-            list[key] = MenuItem(dictionary: dic)
+            list[key] = Item(dictionary: dic)
             return
         }
         NSLog("---> setValue for key '\(key)' should be handled.")
@@ -492,3 +493,50 @@ public class Menu: WPObject {
     var recommended: Items?
 }
 
+public class Feed: WPObject {
+    var blog_ID: Int = 0
+    var feed_ID: Int = 0
+    var name: String?
+    var URL: String?
+    var feed_URL: String?
+    var subscribers_count: Int = 0
+}
+
+public class Tag: WPObject {
+    var tag: Item?
+}
+
+public class Status: WPObject {
+    var subscribed: Bool = false
+}
+
+public class Subscription: EVObject {
+    var ID: Int = 0
+    var blog_ID: Int = 0
+    var URL: String?
+    var date_subscribed: NSDate?
+    var meta: Meta?
+}
+
+public class Subscriptions: WPObject {
+    var subscriptions: [Subscription]? = []
+}
+
+public class Blog: EVObject {
+    var follow_source: String?
+    var blog_id: Int = 0
+    var follow_reco_id: String?
+    var image: String?
+    var nonce: String?
+    var reason: String?
+    var score: String?
+    var title: String?
+    var title_short: String?
+    var url: String?
+    var blog_domain: String?
+    var email_follow_url: String?
+}
+
+public class Blogs: WPObject {
+    var blogs: [Blog]? = []
+}

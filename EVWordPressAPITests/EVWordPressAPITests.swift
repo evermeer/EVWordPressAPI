@@ -90,8 +90,42 @@ class EVWordPressAPITests: XCTestCase {
         waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
-        
     }
+    
+    func testTags() {
+        let expectation = expectationWithDescription("")
+        api.readerTags { result in
+            if let err = result?.error, message = result?.message {
+                print("Warning: WordPress error \(err) : \(message)")
+            } else {
+                print("tags = \(result?.tags)")
+                //XCTAssertTrue(result?.tags?.tags.count > 1, "Tags should return more than 1 items")
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+
+    func testTag() {
+        let expectation = expectationWithDescription("")
+        api.readerTag("WordPress") { result in
+            if let err = result?.error, message = result?.message {
+                print("Warning: WordPress error \(err) : \(message)")
+            } else {
+                print("tags = \(result?.tag)")
+                XCTAssertEqual(result?.tag?.title, "WordPress", "Menu should return more than 1 items")
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+    
     
     func testEnum() {
         let parameters:[usersParameters] = [.number(19), .authors_only(false)]

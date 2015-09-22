@@ -49,7 +49,7 @@ API sections - status (for now only the get calls)
 - Freshly Pressed - the 1 get call implemented
 - Notifications - only has posts
 - Insights - the 2 get calls implemented
-- Reader - to do
+- Reader - the 10 get calls implemented
 - Stats - to do
 - Media - to do
 - Menus - to do

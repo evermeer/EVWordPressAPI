@@ -223,6 +223,9 @@ public enum freshlyPressedParameters: EVAssociated {
     case thumb_height(Int)
 }
 
+/**
+Parameters for the insightsForSlub call
+*/
 public enum insightsForSlugParameters: EVAssociated {
     case context(String)
     case http_envelope(Bool)
@@ -235,4 +238,38 @@ public enum insightsForSlugParameters: EVAssociated {
     case before(NSDate)
     case slug(String)
 }
+
+/**
+Parameters for the following call
+*/
+public enum followingParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case number(Int)
+    case page(Int)
+    case order(String)
+    case after(NSDate)
+    case before(NSDate)
+}
+
+/**
+Parameters for the following call
+*/
+public enum recommendationsParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case exclude(String)
+    case number(Int)
+    case lang(String)
+    case source(String)
+}
+
 
