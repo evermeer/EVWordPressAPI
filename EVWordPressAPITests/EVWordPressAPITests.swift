@@ -134,7 +134,7 @@ class EVWordPressAPITests: XCTestCase {
         let label = associated.label
         let value = associated.value
         NSLog("\(value) - \(value.dynamicType)")
-        let param = associated.value as! [String:AnyObject]?
-        print("\(label), params = \(param)")
+//        let param = associated.value as! [String:AnyObject]?
+//        print("\(label), params = \(param)")
     }
 }

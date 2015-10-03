@@ -1,6 +1,8 @@
 #EVWordPressAPI
 
 A Swift implementation of the WordPress (Jetpack) API.
+[![Git](https://img.shields.io/badge/API%20call%20count-46-brightgreen.svg?style=flat)](https://github.com/evermeer/EVWordPressAPI#progress)
+
 
 <!---
  [![Circle CI](https://img.shields.io/circleci/project/evermeer/EVWordPressAPI.svg?style=flat)](https://circleci.com/gh/evermeer/EVWordPressAPI)
