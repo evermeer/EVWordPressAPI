@@ -38,7 +38,7 @@ public class EVWordPressAPI {
     // ------------------------------------------------------------------------
     
     // move the error object into the response object
-    internal func handleResponse<T:WPObject>(response: Result<T> , completionHandler: (T?)-> Void) {
+    internal func handleResponse<T:WPObject>(response: Result<T, NSError> , completionHandler: (T?)-> Void) {
         if response.error != nil {
             response.error.debugDescription
             response.value?.error = "Network error \(response.error)"
@@ -65,7 +65,7 @@ public class EVWordPressAPI {
         UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             WordPressRequestConvertible.token = token
             Alamofire.request(request)
-                .responseObject { (result:Result<T>) -> Void in
+                .responseObject { (result:Result<T, NSError>) -> Void in
                     self.handleResponse(result, completionHandler: completionHandler)
             }
             }, errorHandler: {
@@ -82,7 +82,7 @@ public class EVWordPressAPI {
     */
     internal func genericCall<T:WPObject, P where P: EVAssociated>(path:String, parameters:[P]?, completionHandler: (T?) -> Void) {
         Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + path, parameters: Dictionary<String,AnyObject>(associated: parameters))
-            .responseObject { (result:Result<T>) -> Void in
+            .responseObject { (result:Result<T, NSError>) -> Void in
                 self.handleResponse(result, completionHandler: completionHandler)
         }
     }
