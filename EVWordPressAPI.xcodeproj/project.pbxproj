@@ -9,26 +9,26 @@
 /* Begin PBXBuildFile section */
 		2925209E10AF7F5FDAE070C8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		34F8D345B1B84C9143635E64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		7F05E8B01BAFEE010046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B11BAFF13E0046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B41BB000090046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B61BB020010046AB5C /* EVWordPressAPI_Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B71BB0215B0046AB5C /* EVWordPressAPI_Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8B91BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8BA1BB025890046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8BC1BB02D190046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8BD1BB035120046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8BF1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BE1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift */; settings = {ASSET_TAGS = (); }; };
-		7F05E8C01BB03F420046AB5C /* EVWordPressAPI_Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BE1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift */; settings = {ASSET_TAGS = (); }; };
-		7F0E6DC31BA75BCB0071AC65 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; settings = {ASSET_TAGS = (); }; };
+		7F05E8B01BAFEE010046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; };
+		7F05E8B11BAFF13E0046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; };
+		7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; };
+		7F05E8B41BB000090046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; };
+		7F05E8B61BB020010046AB5C /* EVWordPressAPI_Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */; };
+		7F05E8B71BB0215B0046AB5C /* EVWordPressAPI_Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B51BB020010046AB5C /* EVWordPressAPI_Follow.swift */; };
+		7F05E8B91BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; };
+		7F05E8BA1BB025890046AB5C /* EVWordPressAPI_FreshlyPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B81BB0249B0046AB5C /* EVWordPressAPI_FreshlyPressed.swift */; };
+		7F05E8BC1BB02D190046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; };
+		7F05E8BD1BB035120046AB5C /* EVWordPressAPI_Insights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BB1BB02D190046AB5C /* EVWordPressAPI_Insights.swift */; };
+		7F05E8BF1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BE1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift */; };
+		7F05E8C01BB03F420046AB5C /* EVWordPressAPI_Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8BE1BB03ED70046AB5C /* EVWordPressAPI_Reader.swift */; };
+		7F0E6DC31BA75BCB0071AC65 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; };
 		7F139E9E1B6A18FC00D32731 /* EVWordPressAPI_Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9D1B6A18FC00D32731 /* EVWordPressAPI_Users.swift */; };
 		7F139EA01B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */; };
 		7F139EA21B6A20EE00D32731 /* EVWordPressAPI_Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */; };
 		7F139EA31B6A248200D32731 /* EVWordPressAPI_Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139E9F1B6A1EFD00D32731 /* EVWordPressAPI_Posts.swift */; };
 		7F139EA41B6A248600D32731 /* EVWordPressAPI_Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */; };
-		7F159E031BA6E16C00247CB1 /* EVWordpressParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */; settings = {ASSET_TAGS = (); }; };
-		7F159E041BA6E9DF00247CB1 /* EVWordpressParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */; settings = {ASSET_TAGS = (); }; };
+		7F159E031BA6E16C00247CB1 /* EVWordpressParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */; };
+		7F159E041BA6E9DF00247CB1 /* EVWordpressParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */; };
 		7F3A9B541B679A7200E79076 /* EVWordPressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CFD1D1B5F89DC00A42318 /* EVWordPressAPI.swift */; };
 		7F3A9B551B679A7600E79076 /* EVWordpressData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CFD1C1B5F89DC00A42318 /* EVWordpressData.swift */; };
 		7F655AFA1B680603003FF992 /* WordPressRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */; };
@@ -56,7 +56,6 @@
 		7F139EA11B6A20EE00D32731 /* EVWordPressAPI_Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordPressAPI_Sites.swift; sourceTree = "<group>"; };
 		7F159DFF1BA3140D00247CB1 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7F159E001BA3140D00247CB1 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		7F159E011BA3140D00247CB1 /* circle.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = circle.yml; sourceTree = "<group>"; };
 		7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordpressParameters.swift; sourceTree = "<group>"; };
 		7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressRequestConvertible.swift; sourceTree = "<group>"; };
 		7F7CFCF21B5F839100A42318 /* EVWordPressAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVWordPressAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +122,6 @@
 			children = (
 				7F159DFF1BA3140D00247CB1 /* .gitignore */,
 				7F159E001BA3140D00247CB1 /* .travis.yml */,
-				7F159E011BA3140D00247CB1 /* circle.yml */,
 				7F7CFD171B5F84C300A42318 /* EVWordPressAPI.podspec */,
 				7F7CFD181B5F84C300A42318 /* LICENSE */,
 				7F7CFD191B5F84C300A42318 /* Podfile */,
