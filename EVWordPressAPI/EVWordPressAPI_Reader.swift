@@ -13,7 +13,7 @@ import EVReflection
 
 
 public extension EVWordPressAPI {
-    // MARK: - Comments
+    // MARK: - Reader
     
     
     /**

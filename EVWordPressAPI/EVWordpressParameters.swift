@@ -272,4 +272,18 @@ public enum recommendationsParameters: EVAssociated {
     case source(String)
 }
 
-
+/**
+ Parameters for the shortcodes call
+ */
+public enum statsSummaryParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case num(Int)
+    case period(String)
+    case date(String)
+    case offset(Int)
+}

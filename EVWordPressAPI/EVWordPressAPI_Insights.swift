@@ -12,13 +12,12 @@ import AlamofireJsonToObjects
 
 
 extension EVWordPressAPI {
-    // MARK: - Users
+    // MARK: - Insights
     
     /**
     List the users of a site (authentication is required)
     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
     
-    :param: viewController the viewController that will be the parent of the OAuth2 webview
     :param: parameters an array of usersParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
@@ -32,7 +31,6 @@ extension EVWordPressAPI {
     List the users of a site (authentication is required)
     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
     
-    :param: viewController the viewController that will be the parent of the OAuth2 webview
     :param: parameters an array of usersParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value

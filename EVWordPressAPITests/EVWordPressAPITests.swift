@@ -109,6 +109,8 @@ class EVWordPressAPITests: XCTestCase {
         }
     }
 
+    
+    
     func testTag() {
         let expectation = expectationWithDescription("")
         api.readerTag("WordPress") { result in
@@ -133,7 +135,7 @@ class EVWordPressAPITests: XCTestCase {
         let associated = y.associated
         let label = associated.label
         let value = associated.value
-        NSLog("\(value) - \(value.dynamicType)")
+        NSLog("\(label) = \(value) - \(value.dynamicType)")
 //        let param = associated.value as! [String:AnyObject]?
 //        print("\(label), params = \(param)")
     }

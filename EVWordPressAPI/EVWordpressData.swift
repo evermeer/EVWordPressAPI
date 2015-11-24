@@ -540,3 +540,57 @@ public class Blog: EVObject {
 public class Blogs: WPObject {
     var blogs: [Blog]? = []
 }
+
+public class Stats: WPObject {
+    var date: NSDate?
+    var stats: [Statistic]? = []
+    var visits: [Visit]? = []
+}
+
+public class Statistic: EVObject {
+    var visitors_today: Int = 0
+    var visitors_yesterday: Int = 0
+    var visitors: Int = 0
+    var views_today: Int = 0
+    var views_yesterday: Int = 0
+    var views_best_day: NSDate?
+    var views_best_day_total: Int = 0
+    var views: Int = 0
+    var comments: Int = 0
+    var posts: Int = 0
+    var followers_blog: Int = 0
+    var followers_comments: Int = 0
+    var comments_per_month: Int = 0
+    var comments_most_active_recent_day: NSDate?
+    var comments_most_active_time: String?
+    var comments_spam: Int = 0
+    var categories: Int = 0
+    var tags: Int = 0
+    var shares: Int = 0
+    var shares_twitter: Int = 0
+    var shares_press_this: Int = 0
+    var shares_google_plus_1: Int = 0
+    var shares_facebook: Int =  0
+}
+
+public class Visit: EVObject {
+    var unit: String?
+    var fields: [String]?
+    var data:[[Int]]?
+}
+
+public class StatsSummary: WPObject {
+    var date: NSDate?
+    var period: String?
+    var views: Int = 0
+    var visitors: Int = 0
+    var likes: Int = 0
+    var reblogs: Int = 0
+    var comments: Int = 0
+    var followers: Int = 0
+}
+
+
+
+
+
