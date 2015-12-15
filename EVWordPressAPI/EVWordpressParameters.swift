@@ -304,3 +304,19 @@ public enum statsReferrersParameters: EVAssociated {
     case max(Int)
     case offset(Int)
 }
+
+/**
+ Parameters for the stats tags call
+*/
+public enum statsTagsParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case max(Int)
+}
+
+
+

@@ -35,6 +35,10 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case StatsTopTasks(Dictionary<String, AnyObject>?)
     case StatsVideo(Dictionary<String, AnyObject>?, String)
     case StatsReferrers(Dictionary<String, AnyObject>?)
+    case StatsClicks(Dictionary<String, AnyObject>?)
+    case StatsTags(Dictionary<String, AnyObject>?)
+    case StatsAuthors(Dictionary<String, AnyObject>?)
+
     
     var path: String {
         switch self {
@@ -80,6 +84,12 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             return "/sites/\(WordPressRequestConvertible.site)/stats/viceo/\(id)"
         case .StatsReferrers(_):
             return "/sites/\(WordPressRequestConvertible.site)/stats/referrers"
+        case .StatsClicks(_):
+            return "/sites/\(WordPressRequestConvertible.site)/stats/clicks"
+        case .StatsTags(_):
+            return "/sites/\(WordPressRequestConvertible.site)/stats/tags"
+        case .StatsAuthors(_):
+            return "/sites/\(WordPressRequestConvertible.site)/stats/top-authors"
         }
     }
     

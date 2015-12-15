@@ -646,3 +646,59 @@ public class StatsReferrer: WPObject {
     var days: [Referrer]?
 }
 
+public class Clicks: EVObject {
+    var day: String?
+    var clicks: [String]?
+    var other_clicks: Int = 0
+    var total_clicks: Int = 0
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class StatsClicks: WPObject {
+    var date: NSDate?
+    var period: String?
+    var days: [Clicks]?
+}
+
+public class StatsTags: WPObject {
+    var date: NSDate?
+    var tags: [String]?
+}
+
+public class Authors: EVObject {
+    var day: String?
+    var authors: [String]?
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class StatsAuthors: WPObject {
+    var date: NSDate?
+    var days: [Authors]?
+    var period: String?
+    var summary: [String]?
+}
+
+
+
+
+
+
+

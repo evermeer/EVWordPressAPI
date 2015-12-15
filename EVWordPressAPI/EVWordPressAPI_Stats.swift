@@ -76,6 +76,46 @@ public extension EVWordPressAPI {
     public func statsReferrers(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsReferrer?) -> Void) {
         genericOauthCall(.StatsReferrers(pdict(parameters)), completionHandler: completionHandler)
     }
+    
+    /**
+     View a site's outbound clicks (authentication is required)
+     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/clicks/
+     
+     :param: parameters an array of statsReferrersParameters. For complete list plus documentation see the api documentation
+     :param: completionHandler A code block that will be called with the StatsClicks object
+     :return: No return value
+     */
+    public func statsClicks(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsClicks?) -> Void) {
+        genericOauthCall(.StatsClicks(pdict(parameters)), completionHandler: completionHandler)
+    }
 
+    /**
+     View a site's views by tags and categories (authentication is required)
+     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/tags/
+     
+     :param: parameters an array of statsTagsParameters. For complete list plus documentation see the api documentation
+     :param: completionHandler A code block that will be called with the StatsTags object
+     :return: No return value
+     */
+    public func statsTags(parameters:[statsTagsParameters]? = nil, completionHandler: (StatsTags?) -> Void) {
+        genericOauthCall(.StatsTags(pdict(parameters)), completionHandler: completionHandler)
+    }
+
+    /**
+     View a site's top authors (authentication is required)
+     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/top-authors/
+     
+     :param: parameters an array of statsReferrersParameters. For complete list plus documentation see the api documentation
+     :param: completionHandler A code block that will be called with the StatsAuthors object
+     :return: No return value
+     */
+    public func statsAuthors(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsAuthors?) -> Void) {
+        genericOauthCall(.StatsAuthors(pdict(parameters)), completionHandler: completionHandler)
+    }
 
 }
+
+
+
+
+
