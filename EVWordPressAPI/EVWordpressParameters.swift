@@ -287,3 +287,20 @@ public enum statsSummaryParameters: EVAssociated {
     case date(String)
     case offset(Int)
 }
+
+/**
+ Parameters for the stats referrers call
+ */
+public enum statsReferrersParameters: EVAssociated {
+    case context(String)
+    case http_envelope(Bool)
+    case pretty(Bool)
+    case meta(String)
+    case fields(String)
+    case callback(String)
+    case num(Int)
+    case period(String)
+    case date(String)
+    case max(Int)
+    case offset(Int)
+}

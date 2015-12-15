@@ -484,7 +484,6 @@ public class Items: EVObject {
         }
         NSLog("---> setValue for key '\(key)' should be handled.")
     }
-    
 }
 
 public class Menu: WPObject {
@@ -590,7 +589,60 @@ public class StatsSummary: WPObject {
     var followers: Int = 0
 }
 
+public class TopTask: EVObject {
+    var day: String?
+    var postviews: [String]?
+    var total_views: Int = 0
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
 
+public class StatsTopTasks: WPObject {
+    var date: NSDate?
+    var period: String?
+    var days: [TopTask]?
+}
 
+public class VideoData: EVObject {
+    var date: String?
+    var p: Int = 0
+}
 
+public class StatsVideo: WPObject {
+    var fields: [String]?
+    var data: [VideoData]?
+    var pages: [String]?
+    var post: Bool = false
+}
+
+public class Referrer: EVObject {
+    var day: String?
+    var groups: [String]?
+    var other_views: Int = 0
+    var total_views: Int = 0
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class StatsReferrer: WPObject {
+    var date: NSDate?
+    var period: String?
+    var days: [Referrer]?
+}
 

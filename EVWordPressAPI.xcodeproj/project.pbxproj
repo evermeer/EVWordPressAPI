@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2925209E10AF7F5FDAE070C8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		34F8D345B1B84C9143635E64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2925209E10AF7F5FDAE070C8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; };
+		34F8D345B1B84C9143635E64 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8794B1C8EEE9BA04FEF83DD /* Pods.framework */; };
 		7F05E8B01BAFEE010046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; };
 		7F05E8B11BAFF13E0046AB5C /* EVWordPressAPI_Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8AF1BAFEE010046AB5C /* EVWordPressAPI_Comments.swift */; };
 		7F05E8B31BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E8B21BAFFE8C0046AB5C /* EVWordPressAPI_Taxonomy.swift */; };
