@@ -113,6 +113,22 @@ public extension EVWordPressAPI {
         genericOauthCall(.StatsAuthors(pdict(parameters)), completionHandler: completionHandler)
     }
 
+    /**
+     View a site's top comment authors and most-commented posts (authentication is required)
+     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/comments/
+     
+     :param: parameters an array of basicContextParameters. For complete list plus documentation see the api documentation
+     :param: completionHandler A code block that will be called with the StatsComments object
+     :return: No return value
+     */
+    public func statsComments(parameters:[basicContextParameters]? = nil, completionHandler: (StatsComments?) -> Void) {
+        genericOauthCall(.StatsComments(pdict(parameters)), completionHandler: completionHandler)
+    }
+
+    public func statsVideoPlays(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsVideoPlays?) -> Void) {
+        genericOauthCall(.StatsVideoPlays(pdict(parameters)), completionHandler: completionHandler)
+    }
+
 }
 
 

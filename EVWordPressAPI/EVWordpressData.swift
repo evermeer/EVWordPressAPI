@@ -689,15 +689,73 @@ public class Authors: EVObject {
     }
 }
 
+public class StatsAuthor: EVObject {
+    var name: String?
+    var link: String?
+    var gravatar: String?
+    var comments: Int = 0
+    var follow_date: Bool = false
+}
+
 public class StatsAuthors: WPObject {
     var date: NSDate?
-    var days: [Authors]?
+    var day: String?
+    var _days: [StatsAuthor]?
+    var period: String?
+    var summary: [String]?
+
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class StatsPost: EVObject {
+    var name: String?
+    var link: String?
+    var id: Int = 0
+    var comments: Int = 0
+}
+
+public class StatsComments: WPObject {
+    var date: String?
+    var authors: [StatsAuthor]?
+    var posts: [StatsPost]?
+    var monthly_comments: Int = 0
+    var total_comments: Int = 0
+    var most_active_day: String?
+    var most_active_time: String?
+    var most_commented_post: [StatsPost]?
+}
+
+public class StatsPlays: EVObject {
+    var day: String?
+    var plays: [String]?
+    var other_plays: Int = 0
+    var total_plays: Int = 0
+
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            day = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
+
+public class StatsVideoPlays: WPObject {
+    var date: NSDate?
+    var days: [StatsPlays]?
     var period: String?
     var summary: [String]?
 }
-
-
-
 
 
 

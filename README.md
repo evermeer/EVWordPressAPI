@@ -52,7 +52,7 @@ API sections - status (for now only the get calls)
 - Notifications - only has posts
 - Insights - the 2 get calls implemented
 - Reader - the 10 get calls implemented
-- Stats - 8 done, 11 to do
+- Stats - 10 done, 9 to do
 - Media - to do
 - Menus - to do
 - Batch - to do
