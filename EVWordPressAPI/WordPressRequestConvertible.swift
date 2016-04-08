@@ -40,6 +40,7 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
     case StatsAuthors(Dictionary<String, AnyObject>?)
     case StatsComments(Dictionary<String, AnyObject>?)
     case StatsVideoPlays(Dictionary<String, AnyObject>?)
+    case StatsPost(Dictionary<String, AnyObject>?)
 
     
     var path: String {
@@ -96,6 +97,8 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
             return "/sites/\(WordPressRequestConvertible.site)/stats/comments"
         case .StatsVideoPlays(_):
             return "/sites/\(WordPressRequestConvertible.site)/stats/video-plays"
+        case .StatsPost(_):
+            return "/sites/\(WordPressRequestConvertible.site)/stats/stats-post"  //TODO: TEST
         }
     }
     

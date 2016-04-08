@@ -4,7 +4,7 @@
 //  Created by Edwin Vermeer on 7/12/15.
 //  Copyright (c) 2015 evict. All rights reserved.
 //
-
+import Foundation
 import EVReflection
 
 public class WPObject: EVObject {
@@ -715,7 +715,7 @@ public class StatsAuthors: WPObject {
     }
 }
 
-public class StatsPost: EVObject {
+public class StatsPostInfo: EVObject {
     var name: String?
     var link: String?
     var id: Int = 0
@@ -725,12 +725,12 @@ public class StatsPost: EVObject {
 public class StatsComments: WPObject {
     var date: String?
     var authors: [StatsAuthor]?
-    var posts: [StatsPost]?
+    var posts: [StatsPostInfo]?
     var monthly_comments: Int = 0
     var total_comments: Int = 0
     var most_active_day: String?
     var most_active_time: String?
-    var most_commented_post: [StatsPost]?
+    var most_commented_post: [StatsPostInfo]?
 }
 
 public class StatsPlays: EVObject {
@@ -758,5 +758,47 @@ public class StatsVideoPlays: WPObject {
 }
 
 
+public class StatsPost: WPObject {
+    var date: NSDate?
+    var views: Int = 0
+    var years: [StatsPostData]?
+    var averages: [StatsPostData]?
+    var weeks: [Week]?
+    var fields: [String]?
+    var data: Dictionary<String,Int> = Dictionary<String,Int>()
+    var highest_month: Int = 0
+    var highest_day_average: Int = 0
+    var highest_week_average: Int = 0
+    var post: Post?
+}
+
+public class Week: EVObject {
+    var days: [Day]?
+    var total: Int = 0
+    var average: Int = 0
+    var change: Int = 0
+}
+
+public class Day: EVObject {
+    var day: NSDate?
+    var count: Int = 0
+}
+
+public class StatsPostData: EVObject {
+    var year: String?
+    var months: Dictionary<String, Int>?
+    var total: Int = 0
+    var overall: Int = 0
+    
+    // This way we can solve that the JSON has arbitrary keys
+    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        if let dic = value as? NSDictionary {
+            year = key
+            EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
+            return
+        }
+        NSLog("---> setValue for key '\(key)' should be handled.")
+    }
+}
 
 

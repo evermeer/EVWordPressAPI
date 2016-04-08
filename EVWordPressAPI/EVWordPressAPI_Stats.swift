@@ -125,8 +125,20 @@ public extension EVWordPressAPI {
         genericOauthCall(.StatsComments(pdict(parameters)), completionHandler: completionHandler)
     }
 
+    /**
+     View a site's video plays (authentication is required)
+     See: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/stats/video-plays/
+     
+     :param: parameters an array of statsReferrersParameters. For complete list plus documentation see the api documentation
+     :param: completionHandler A code block that will be called with the StatsVideoPlays object
+     :return: No return value
+     */
     public func statsVideoPlays(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsVideoPlays?) -> Void) {
         genericOauthCall(.StatsVideoPlays(pdict(parameters)), completionHandler: completionHandler)
+    }
+
+    public func statsPost(parameters:[basicContextParameters]? = nil, completionHandler: (StatsPost?) -> Void) {
+        genericOauthCall(.StatsPost(pdict(parameters)), completionHandler: completionHandler)
     }
 
 }

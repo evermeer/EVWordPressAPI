@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "EVWordPressAPI"
-s.version      = "0.3.0"
+s.version      = "0.3.1"
 s.summary      = "Implementation of the WordPress (Jetpack) API"
 
 s.description  = "A complete implementation of the WordPress (Jetpack) API."
