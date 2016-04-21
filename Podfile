@@ -1,9 +1,19 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
-link_with 'EVWordPressAPIDemo', 'EVWordPressAPITests'
-pod 'Alamofire'
-pod 'EVReflection'
-pod 'AlamofireOauth2'
-pod 'AlamofireJsonToObjects'
-pod 'KeychainAccess'
+
+target 'EVWordPressAPIDemo' do
+    pod 'Alamofire'
+    pod 'EVReflection'
+    pod 'AlamofireOauth2'
+    pod 'AlamofireJsonToObjects'
+    pod 'KeychainAccess'
+end
+
+target 'EVWordPressAPITests' do
+    pod 'Alamofire'
+    pod 'EVReflection'
+    pod 'AlamofireOauth2'
+    pod 'AlamofireJsonToObjects'
+    pod 'KeychainAccess'
+end

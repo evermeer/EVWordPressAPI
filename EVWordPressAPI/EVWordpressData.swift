@@ -30,6 +30,7 @@ public class Post: WPObject {
     var URL: String?
     var link: String?
     var short_URL: String?
+    var other_URLs: String?
     var content: String?
     var excerpt: String?
     var slug: String?
@@ -111,6 +112,8 @@ public class Author: EVObject {
     var login: String?
     var email: Bool = false
     var name: String?
+    var first_name: String?
+    var last_name: String?
     var nice_name: String?
     var URL: String?
     var avatar_URL: String?
@@ -469,6 +472,7 @@ public class Today: EVObject {
 public class Item: WPObject {
     var ID: Int = 0
     var title: String?
+    var display_name: String?
     var URL: String?
     var slug: String?
 }
