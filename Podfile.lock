@@ -6,7 +6,7 @@ PODS:
   - AlamofireOauth2 (1.2.0):
     - Alamofire
     - KeychainAccess
-  - EVReflection (2.24.0)
+  - EVReflection (2.26.0)
   - KeychainAccess (2.3.5)
 
 DEPENDENCIES:
@@ -20,7 +20,7 @@ SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   AlamofireJsonToObjects: e5155c1c58493c44d7ebe56bbb1aa65d95e82c68
   AlamofireOauth2: 6009079faaef85d6016db08ac0db311539905c83
-  EVReflection: 1dbb41847798d88ab625007a6a311f28a5d71d86
+  EVReflection: d454edee5f8c2add28ae47b5770a1ae555d156db
   KeychainAccess: e283c1981a6c5655e1984cd411c6faf16fa165ae
 
 PODFILE CHECKSUM: b2223e89f3e2cfee17e7e3342cf9d34ea9198ff9
