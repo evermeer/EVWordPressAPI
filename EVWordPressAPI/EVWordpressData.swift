@@ -30,7 +30,7 @@ public class Post: WPObject {
     var URL: String?
     var link: String?
     var short_URL: String?
-    var other_URLs: String?
+    var other_URLs: [String]?
     var content: String?
     var excerpt: String?
     var slug: String?
@@ -72,6 +72,7 @@ public class Post: WPObject {
     var site_is_private: String?
     var featured_Media: Attachment?
     var editorial: Editorial?
+    var terms: [String]?
 }
 
 public class Discussion: EVObject {
@@ -133,7 +134,7 @@ public class Categories: WPObject {
     var categories = [Taxonomy]()
     
     // This way we can solve that the JSON uses values for keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             categories.append(Taxonomy(dictionary: dic))
             return
@@ -151,7 +152,7 @@ public class Tags: WPObject {
     var tags:[Taxonomy] = [Taxonomy]()
     
     // This way we can solve that the JSON uses values for keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             tags.append(Taxonomy(dictionary: dic))
             return
@@ -175,8 +176,8 @@ public class Attachments: EVObject {
     var IDs = [Attachment]()
     
     // This way we can solve that the JSON has numeric fields that are used as keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
-        if let _ = Int(key), dic = value as? NSDictionary {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
+        if let _ = Int(key), let dic = value as? NSDictionary {
             IDs.append(Attachment(dictionary: dic))
             return
         }
@@ -322,7 +323,7 @@ public class Scripts: EVObject {
     var scripts = [String: Script_Slug]()
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             scripts[key] = Script_Slug(dictionary: dic)
             return
@@ -335,7 +336,7 @@ public class Styles: EVObject {
     var styles = [String: Style_Slug]()
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             styles[key] = Style_Slug(dictionary: dic)
             return
@@ -460,7 +461,7 @@ public class Today: EVObject {
     var today = [String: Stat]()
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             today[key] = Stat(dictionary: dic)
             return
@@ -475,13 +476,14 @@ public class Item: WPObject {
     var display_name: String?
     var URL: String?
     var slug: String?
+    var type: String?
 }
 
 public class Items: EVObject {
     var list:[String:Item] = [String:Item]()
 
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             list[key] = Item(dictionary: dic)
             return
@@ -599,7 +601,7 @@ public class TopTask: EVObject {
     var total_views: Int = 0
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -634,7 +636,7 @@ public class Referrer: EVObject {
     var total_views: Int = 0
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -657,7 +659,7 @@ public class Clicks: EVObject {
     var total_clicks: Int = 0
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -683,7 +685,7 @@ public class Authors: EVObject {
     var authors: [String]?
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -709,7 +711,7 @@ public class StatsAuthors: WPObject {
     var summary: [String]?
 
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -744,7 +746,7 @@ public class StatsPlays: EVObject {
     var total_plays: Int = 0
 
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             day = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)
@@ -795,7 +797,7 @@ public class StatsPostData: EVObject {
     var overall: Int = 0
     
     // This way we can solve that the JSON has arbitrary keys
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(_ value: Any!, forUndefinedKey key: String) {
         if let dic = value as? NSDictionary {
             year = key
             EVReflection.setPropertiesfromDictionary(dic, anyObject: self)

@@ -1,9 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'EVWordPressAPIDemo' do
-    pod 'Alamofire'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
     pod 'EVReflection'
     pod 'AlamofireOauth2'
     pod 'AlamofireJsonToObjects'
@@ -11,7 +11,7 @@ target 'EVWordPressAPIDemo' do
 end
 
 target 'EVWordPressAPITests' do
-    pod 'Alamofire'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
     pod 'EVReflection'
     pod 'AlamofireOauth2'
     pod 'AlamofireJsonToObjects'

@@ -23,7 +23,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Site object
     :return: No return value
     */
-    public func site(parameters:[basicParameters]? = nil, completionHandler: (Site?) -> Void) {
+    public func site(_ parameters:[basicParameters]? = nil, completionHandler: @escaping (Site?) -> Void) {
         genericCall("/sites/\(self.site)", parameters: parameters, completionHandler: completionHandler)
     }
     
@@ -34,7 +34,7 @@ public extension EVWordPressAPI {
     :parameter: parameters: an array of basicParameters. For a complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Template object
     */
-    public func pageTemplates(parameters:[basicParameters]? = nil, completionHandler: (Templates?) -> Void) {
+    public func pageTemplates(_ parameters:[basicParameters]? = nil, completionHandler: @escaping (Templates?) -> Void) {
         genericCall("/sites/\(self.site)/page-templates", parameters: parameters, completionHandler: completionHandler)
     }
             
@@ -45,7 +45,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of shortcodesParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Shortcodes object
     */
-    public func shortcodes(parameters:[basicContextParameters]? = nil, completionHandler: (Shortcodes?) -> Void) {
+    public func shortcodes(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Shortcodes?) -> Void) {
         genericOauthCall(.Shortcodes(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -56,7 +56,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of shortcodesRenderParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the ShortcodeRender object
     */
-    public func shortcodesRender(parameters:[shortcodesRenderParameters]? = nil, completionHandler: (ShortcodesRender?) -> Void) {
+    public func shortcodesRender(_ parameters:[shortcodesRenderParameters]? = nil, completionHandler: @escaping (ShortcodesRender?) -> Void) {
         genericOauthCall(.ShortcodesRender(pdict(parameters)), completionHandler: completionHandler)
     }
     
@@ -67,7 +67,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicContextParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Embeds object
     */
-    public func embeds(parameters:[basicContextParameters]? = nil, completionHandler: (Embeds?) -> Void) {
+    public func embeds(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Embeds?) -> Void) {
         genericOauthCall(.Embeds(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -78,7 +78,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of embedsRenderParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the EmbedsRender object
     */
-    public func embedsRender(parameters:[embedsRenderParameters]? = nil, completionHandler: (EmbedsRender?) -> Void) {
+    public func embedsRender(_ parameters:[embedsRenderParameters]? = nil, completionHandler: @escaping (EmbedsRender?) -> Void) {
         genericOauthCall(.EmbedsRender(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -89,7 +89,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicContextParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Embeds object
     */
-    public func meSites(parameters:[meSitesParameters]? = nil, completionHandler: (Sites?) -> Void) {
+    public func meSites(_ parameters:[meSitesParameters]? = nil, completionHandler: @escaping (Sites?) -> Void) {
         genericOauthCall(.MeSites(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -100,7 +100,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation
     :param: completionHandler A code block that will be called with the Widgets object
     */
-    public func widgets(parameters:[basicParameters]? = nil, completionHandler: (Widgets?) -> Void) {
+    public func widgets(_ parameters:[basicParameters]? = nil, completionHandler: @escaping (Widgets?) -> Void) {
         genericCall("/sites/\(self.site)/widgets", parameters: parameters, completionHandler: completionHandler)
     }
 
@@ -112,7 +112,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
     :param: completionHandler A code block that will be called with the Widgets object
     */
-    public func widget(id:String, parameters:[basicParameters]? = nil, completionHandler: (Widget?) -> Void) {
+    public func widget(id:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Widget?) -> Void) {
         genericCall("/sites/\(self.site)/widgets/widget:\(id)", parameters: parameters, completionHandler: completionHandler)
     }
 
@@ -124,7 +124,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
     :param: completionHandler A code block that will be called with the Widgets object
     */
-    public func headersForTheme(themeSlug:String, parameters:[basicContextParameters]? = nil, completionHandler: (Header?) -> Void) {
+    public func headersForTheme(themeSlug:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Header?) -> Void) {
         genericCall("/sites/\(self.site)/headers/\(themeSlug)", parameters: parameters, completionHandler: completionHandler)
     }
 
@@ -135,7 +135,7 @@ public extension EVWordPressAPI {
     :param: parameters an array of basicParameters. For complete list plus documentation see the api documentation.
     :param: completionHandler A code block that will be called with the Widgets object
     */
-    public func headers(parameters:[basicContextParameters]? = nil, completionHandler: (Header?) -> Void) {
+    public func headers(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Header?) -> Void) {
         genericCall("/sites/\(self.site)/headers/mine", parameters: parameters, completionHandler: completionHandler)
     }
 

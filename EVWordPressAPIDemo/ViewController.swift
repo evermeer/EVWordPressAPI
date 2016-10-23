@@ -10,13 +10,13 @@ import UIKit
 import AlamofireOauth2
 
 class ViewController: UIViewController {
-
+    
     // Create your own clientID and clientSecret at https://developer.wordpress.com/docs/oauth2/
     let wordpressOauth2Settings = Oauth2Settings(
-        baseURL: "https://public-api.wordpress.com/rest/v1.1",
+        baseURL: "https://public-api.wordpress.com/rest/v1",
         authorizeURL: "https://public-api.wordpress.com/oauth2/authorize",
         tokenURL: "https://public-api.wordpress.com/oauth2/token",
-        redirectURL: "alamofireoauth2://wordpress/oauth_callback",
+        redirectURL: "http://evict.nl",
         clientID: "41739",
         clientSecret: "31eC5no1cKXH3RS8sKfjv9WEpHiyvl24jvx0iXXwqc4Dajhq9OeAgRDazVoHtKtq"
     )
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     @IBAction func testUsers(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/users/
         api.users([.number(19), .authors_only(false)]) { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Number of users = \(result?.found), returend by call = \(result?.users?.count)")
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     @IBAction func testSuggest(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/users/suggest/
         api.suggest { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("WaprintWordPress error \(err) : \(message)")
             } else {
                 print("Number of suggestions returend by call = \(result?.suggestions?.count)")
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     @IBAction func testMe(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
         api.me { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Loged in as user = \(result?.display_name)")
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     @IBAction func testMeLikes(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/me/
         api.meLikes { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Number of likes = \(result?.found), returend by call = \(result?.likes?.count)")
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     @IBAction func testShortcodes(sender: AnyObject) {
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/shortcodes/
         api.shortcodes { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Number of shortcodes = \(result?.shortcodes?.count)")

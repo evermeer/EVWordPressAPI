@@ -102,26 +102,24 @@ enum WordPressRequestConvertible: URLRequestConvertible, EVAssociated {
         }
     }
     
-    var URLRequest: NSMutableURLRequest { get
-        {
-            let URL = NSURL(string: WordPressRequestConvertible.baseURLString!)!
-            let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
-            mutableURLRequest.HTTPMethod = "GET"
-            
-            var parameters = self.associated.value as? [String:AnyObject]
-            if parameters == nil {
-                if (self.associated.value as? ([String:AnyObject]?, String)) != nil {
-                    let (param, _) = (self.associated.value as? ([String:AnyObject]?, String))!
-                    parameters = param
-                }
+    func asURLRequest() throws -> URLRequest {
+        let URL: NSURL = NSURL(string: WordPressRequestConvertible.baseURLString!)!
+        var mutableURLRequest: URLRequest = URLRequest(url: URL.appendingPathComponent(self.path)!)
+        mutableURLRequest.httpMethod = "GET"
+        
+        var parameters = self.associated.value as? [String:AnyObject]
+        if parameters == nil {
+            if (self.associated.value as? ([String:AnyObject]?, String)) != nil {
+                let (param, _) = (self.associated.value as? ([String:AnyObject]?, String))!
+                parameters = param
             }
-            
-            if let t = WordPressRequestConvertible.token {
-                mutableURLRequest.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
-            }
-            let encoding = Alamofire.ParameterEncoding.URL
-            return encoding.encode(mutableURLRequest, parameters: parameters).0
         }
+        
+        if let t = WordPressRequestConvertible.token {
+            mutableURLRequest.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
+        }
+        
+        return try URLEncoding.default.encode(urlRequest!, with: parameters)
     }
 }
 

@@ -31,7 +31,7 @@ class EVWordPressAPITests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         self.api = EVWordPressAPI(baseUrl: self.baseUrl, site: "evict.nl")
-        EVReflection.setBundleIdentifier(Posts)
+        EVReflection.setBundleIdentifier(Posts.self)
     }
     
     override func tearDown() {
@@ -40,71 +40,71 @@ class EVWordPressAPITests: XCTestCase {
     }
     
     func testPosts() {
-        let expectation = expectationWithDescription("")
+        let expect = expectation(description: "")
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/posts/
         api.posts([.number(19)]) { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Number of posts = \(result?.found), returend by call = \(result?.posts.count)")
                 XCTAssertEqual(result?.posts.count ?? 0, 19, "Number of returned posts should be 19")
             }
-            expectation.fulfill()
+            expect.fulfill()
         }
 
-        waitForExpectationsWithTimeout(10) { (error:NSError?) -> Void in
+        waitForExpectations(timeout: 10) { (error:Error?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
     }
 
     func testSite() {
-        let expectation = expectationWithDescription("")
+        let expect = expectation(description: "")
         // For parameters and other details see: https://developer.wordpress.com/docs/api/1.1/get/sites/%24site/
         api.site { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("Site name = \(result?.name), description = \(result?._description)")
                 XCTAssertEqual(result?.name ?? "", "E.V.I.C.T. B.V.", "Site name should be 'E.V.I.C.T. B.V.'")
             }
-            expectation.fulfill()
+            expect.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { (error: Error?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
     }
     
     func testReadMenu() {
-        let expectation = expectationWithDescription("")
+        let expect = expectation(description: "")
         api.readMenu { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("default = \(result?._default), subscribed = \(result?.subscribed), recommended = \(result?.recommended)")
-                XCTAssertTrue(result?.recommended?.list.count > 10, "Menu should return more than 10 items")
+                XCTAssertTrue(result?.recommended?.list.count ?? 0 > 10, "Menu should return more than 10 items")
             }
-            expectation.fulfill()
+            expect.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { (error: Error?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
     }
     
     func testTags() {
-        let expectation = expectationWithDescription("")
+        let expect = expectation(description: "")
         api.readerTags { result in
-            if let err = result?.error, message = result?.message {
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("tags = \(result?.tags)")
                 //XCTAssertTrue(result?.tags?.tags.count > 1, "Tags should return more than 1 items")
             }
-            expectation.fulfill()
+            expect.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { (error: Error?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
     }
@@ -112,18 +112,18 @@ class EVWordPressAPITests: XCTestCase {
     
     
     func testTag() {
-        let expectation = expectationWithDescription("")
-        api.readerTag("WordPress") { result in
-            if let err = result?.error, message = result?.message {
+        let expect = expectation(description: "")
+        api.readerTag(tag: "WordPress") { result in
+            if let err = result?.error, let message = result?.message {
                 print("Warning: WordPress error \(err) : \(message)")
             } else {
                 print("tags = \(result?.tag)")
                 XCTAssertEqual(result?.tag?.title, "WordPress", "Menu should return more than 1 items")
             }
-            expectation.fulfill()
+            expect.fulfill()
         }
         
-        waitForExpectationsWithTimeout(10) { (error: NSError?) -> Void in
+        waitForExpectations(timeout: 10) { (error: Error?) -> Void in
             XCTAssertNil(error, "\(error)")
         }
     }
@@ -135,7 +135,7 @@ class EVWordPressAPITests: XCTestCase {
         let associated = y.associated
         let label = associated.label
         let value = associated.value
-        NSLog("\(label) = \(value) - \(value.dynamicType)")
+        print("\(label) = \(value) - \(type(of: value))")
 //        let param = associated.value as! [String:AnyObject]?
 //        print("\(label), params = \(param)")
     }

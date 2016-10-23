@@ -38,13 +38,12 @@ public class EVWordPressAPI {
     // ------------------------------------------------------------------------
     
     // move the error object into the response object
-    internal func handleResponse<T:WPObject>(response: Result<T, NSError> , completionHandler: (T?)-> Void) {
-        if response.error != nil {
-            response.error.debugDescription
-            response.value?.error = "Network error \(response.error)"
-            response.value?.message = response.error.debugDescription
+    internal func handleResponse<T:WPObject>(_ response: DataResponse<T> , completionHandler: (T?)-> Void) {
+        if response.result.error != nil {
+            response.result.value?.error = "Network error \(response.result.error)"
+            response.result.value?.message = response.result.error.debugDescription
         }
-        completionHandler(response.value)
+        completionHandler(response.result.value)
     }
     
     // add an oauth error to the response object
@@ -61,15 +60,15 @@ public class EVWordPressAPI {
     :param: parameters an array of parameters. For complete list plus documentation see the api documentation for the specific call
     :param: completionHandler A code block that will be called with the result object
     */
-    internal func genericOauthCall<T:WPObject>(request:WordPressRequestConvertible, completionHandler: (T?) -> Void) {
+    internal func genericOauthCall<T:WPObject>(_ request:WordPressRequestConvertible, completionHandler: @escaping (T?) -> Void) {
         UsingOauth2(self.wordpressOauth2Settings, performWithToken: { token in
             WordPressRequestConvertible.token = token
             Alamofire.request(request)
-                .responseObject { (result:Result<T, NSError>) -> Void in
+                .responseObject { (result:DataResponse<T>) -> Void in
                     self.handleResponse(result, completionHandler: completionHandler)
             }
             }, errorHandler: {
-                completionHandler(self.oauthError(T()))
+                completionHandler(self.oauthError(obj: T()))
         })
     }
 
@@ -80,11 +79,11 @@ public class EVWordPressAPI {
     :param: parameters an array of parameters. For complete list plus documentation see the api documentation for the specific call
     :param: completionHandler A code block that will be called with the result object
     */
-    internal func genericCall<T:WPObject, P where P: EVAssociated>(path:String, parameters:[P]?, completionHandler: (T?) -> Void) {
-        Alamofire.request(.GET, self.wordpressOauth2Settings.baseURL + path, parameters: Dictionary<String,AnyObject>(associated: parameters))
-            .responseObject { (result:Result<T, NSError>) -> Void in
-                self.handleResponse(result, completionHandler: completionHandler)
-        }
+    internal func genericCall<T:WPObject, P>(_ path:String, parameters:[P]?, completionHandler: @escaping (T?) -> Void) where P: EVAssociated {
+        Alamofire.request(self.wordpressOauth2Settings.baseURL + path, parameters: Dictionary<String,AnyObject>(associated: parameters))
+        .responseObject(completionHandler: {  (result:DataResponse<T>) -> Void in
+            self.handleResponse(result, completionHandler: completionHandler)
+        })
     }
     
     /**
@@ -94,8 +93,9 @@ public class EVWordPressAPI {
     
     - returns: parameter dictionary
     */
-    internal func pdict<P where P: EVAssociated>(parameters:[P]?) -> Dictionary<String,AnyObject> {
+    internal func pdict<P>(_ parameters:[P]?) -> Dictionary<String,AnyObject> where P: EVAssociated {
         return Dictionary(associated: parameters)
     }
 }
+
 

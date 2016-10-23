@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func posts(parameters:[postsParameters]? = nil, completionHandler: (Posts?) -> Void) {
+    public func posts(_ parameters:[postsParameters]? = nil, completionHandler: @escaping (Posts?) -> Void) {
         genericCall("/sites/\(self.site)/posts/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -37,7 +37,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Post object
     :return: No return value
     */
-    public func postById(postId:String, parameters:[basicContextParameters]? = nil, completionHandler: (Post?) -> Void) {
+    public func postById(postId:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Post?) -> Void) {
         genericCall("/sites/\(self.site)/posts/\(postId)", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -50,7 +50,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Post object
     :return: No return value
     */
-    public func postBySlug(postSlug:String, parameters:[basicContextParameters]? = nil, completionHandler: (Post?) -> Void) {
+    public func postBySlug(postSlug:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Post?) -> Void) {
         genericCall("/sites/\(self.site)/posts/slug:\(postSlug)", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -64,7 +64,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Likes object
     :return: No return value
     */
-    public func postLikes(postId:String, parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
+    public func postLikes(postId:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Likes?) -> Void) {
         genericCall("/sites/\(self.site)/posts/\(postId)/likes/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -78,7 +78,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Likes object
     :return: No return value
     */
-    public func postLikesMine(postId:String, parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
+    public func postLikesMine(postId:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Likes?) -> Void) {
         genericCall("/sites/\(self.site)/posts/\(postId)/likes/mine/", parameters:parameters, completionHandler: completionHandler)
     }
     
@@ -92,7 +92,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Reblog object
     :return: No return value
     */
-    public func postReblogsMine(postId:String, parameters:[basicParameters]? = nil, completionHandler: (Reblogs?) -> Void) {
+    public func postReblogsMine(postId:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Reblogs?) -> Void) {
         genericCall("/sites/\(self.site)/posts/\(postId)/likes/mine/", parameters:parameters, completionHandler: completionHandler)
     }
 }

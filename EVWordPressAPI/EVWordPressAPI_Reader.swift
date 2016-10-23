@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func readMenu(parameters:[basicContextParameters]? = nil, completionHandler: (Menu?) -> Void) {
+    public func readMenu(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Menu?) -> Void) {
         genericCall("/read/menu", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -38,7 +38,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Feed object
     :return: No return value
     */
-    public func feed(feedId:String, parameters:[basicContextParameters]? = nil, completionHandler: (Feed?) -> Void) {
+    public func feed(feedId:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Feed?) -> Void) {
         genericCall("/read/feed/\(feedId)", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -51,7 +51,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func following(parameters:[followingParameters]? = nil, completionHandler: (Posts?) -> Void) {
+    public func following(_ parameters:[followingParameters]? = nil, completionHandler: @escaping (Posts?) -> Void) {
         genericCall("/read/following", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -64,7 +64,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func liked(parameters:[followingParameters]? = nil, completionHandler: (Posts?) -> Void) {
+    public func liked(_ parameters:[followingParameters]? = nil, completionHandler: @escaping (Posts?) -> Void) {
         genericCall("/read/liked", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -77,7 +77,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func tagPosts(tag:String, parameters:[followingParameters]? = nil, completionHandler: (Posts?) -> Void) {
+    public func tagPosts(tag:String, parameters:[followingParameters]? = nil, completionHandler: @escaping (Posts?) -> Void) {
         genericCall("/read/tags/\(tag)/posts", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -90,7 +90,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the TagsWrappper object
     :return: No return value
     */
-    public func readerTags(parameters:[basicContextParameters]? = nil, completionHandler: (TagsWrapper?) -> Void) {
+    public func readerTags(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (TagsWrapper?) -> Void) {
         genericCall("/read/tags", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -104,7 +104,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Tag object
     :return: No return value
     */
-    public func readerTag(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: (Tag?) -> Void) {
+    public func readerTag(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Tag?) -> Void) {
         genericCall("/read/tags/\(tag)", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -118,7 +118,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Tag object
     :return: No return value
     */
-    public func tagStatus(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: (Status?) -> Void) {
+    public func tagStatus(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Status?) -> Void) {
         genericOauthCall(.TagStatus(pdict(parameters), tag), completionHandler: completionHandler)
     }
 
@@ -131,7 +131,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Subscriptions object
     :return: No return value
     */
-    public func following(parameters:[followingParameters]? = nil, completionHandler: (Subscriptions?) -> Void) {
+    public func following(_ parameters:[followingParameters]? = nil, completionHandler: @escaping (Subscriptions?) -> Void) {
         genericOauthCall(.Following(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -144,7 +144,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Subscriptions object
     :return: No return value
     */
-    public func recommendations(parameters:[recommendationsParameters]? = nil, completionHandler: (Blogs?) -> Void) {
+    public func recommendations(_ parameters:[recommendationsParameters]? = nil, completionHandler: @escaping (Blogs?) -> Void) {
         genericOauthCall(.Recommendations(pdict(parameters)), completionHandler: completionHandler)
     }
     

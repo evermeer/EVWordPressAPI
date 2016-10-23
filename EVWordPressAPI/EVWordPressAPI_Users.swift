@@ -23,7 +23,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func users(parameters:[usersParameters]? = nil, completionHandler: (Users?) -> Void) {
+    public func users(_ parameters:[usersParameters]? = nil, completionHandler: @escaping (Users?) -> Void) {
         genericOauthCall(.Users(pdict(parameters)), completionHandler: completionHandler)
     }
     
@@ -37,7 +37,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Suggestions object
     :return: No return value
     */
-    public func suggest(parameters:[suggestParameters]? = nil, completionHandler: (Suggestions?) -> Void) {
+    public func suggest(_ parameters:[suggestParameters]? = nil, completionHandler: @escaping (Suggestions?) -> Void) {
         genericOauthCall(.Suggest(pdict(parameters)), completionHandler: completionHandler)
     }
         
@@ -51,7 +51,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the User object
     :return: No return value
     */
-    public func me(parameters:[basicParameters]? = nil, completionHandler: (User?) -> Void) {
+    public func me(_ parameters:[basicParameters]? = nil, completionHandler: @escaping (User?) -> Void) {
         genericOauthCall(.Me(pdict(parameters)), completionHandler: completionHandler)
     }
     
@@ -65,7 +65,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the User object
     :return: No return value
     */
-    public func meLikes(parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
+    public func meLikes(_ parameters:[basicParameters]? = nil, completionHandler: @escaping (Likes?) -> Void) {
         genericOauthCall(.MeLikes(pdict(parameters)), completionHandler: completionHandler)
     }
     

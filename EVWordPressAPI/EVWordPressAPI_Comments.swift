@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func comments(parameters:[commentsParameters]? = nil, completionHandler: (Comments?) -> Void) {
+    public func comments(_ parameters:[commentsParameters]? = nil, completionHandler: @escaping (Comments?) -> Void) {
         genericCall("/sites/\(self.site)/comments/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -37,7 +37,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func replies(postId: String, parameters:[commentsParameters]? = nil, completionHandler: (Comments?) -> Void) {
+    public func replies(postId: String, parameters:[commentsParameters]? = nil, completionHandler: @escaping (Comments?) -> Void) {
         genericCall("/sites/\(self.site)/posts/\(postId)/replies/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -50,7 +50,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func comment(commentId: String, parameters:[basicContextParameters]? = nil, completionHandler: (Comment?) -> Void) {
+    public func comment(commentId: String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Comment?) -> Void) {
         genericCall("/sites/\(self.site)/comments/", parameters:parameters, completionHandler: completionHandler)
     }
     
@@ -64,7 +64,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Likes object
     :return: No return value
     */
-    public func commentLikes(commentId:String, parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
+    public func commentLikes(commentId:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Likes?) -> Void) {
         genericCall("/sites/\(self.site)/comments/\(commentId)/likes/", parameters:parameters, completionHandler: completionHandler)
     }
     
@@ -78,7 +78,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Likes object
     :return: No return value
     */
-    public func commentsLikesMine(commentId:String, parameters:[basicParameters]? = nil, completionHandler: (Likes?) -> Void) {
+    public func commentsLikesMine(commentId:String, parameters:[basicParameters]? = nil, completionHandler: @escaping (Likes?) -> Void) {
         genericCall("/sites/\(self.site)/comments/\(commentId)/likes/mine/", parameters:parameters, completionHandler: completionHandler)
     }
 }

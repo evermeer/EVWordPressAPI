@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Stats object
     :return: No return value
     */
-    public func stats(parameters:[basicContextParameters]? = nil, completionHandler: (Stats?) -> Void) {
+    public func stats(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Stats?) -> Void) {
         genericOauthCall(.Stats(pdict(parameters)), completionHandler: completionHandler)
     }
     
@@ -36,7 +36,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsSummary object
      :return: No return value
      */
-    public func statsSummary(parameters:[statsSummaryParameters]? = nil, completionHandler: (StatsSummary?) -> Void) {
+    public func statsSummary(_ parameters:[statsSummaryParameters]? = nil, completionHandler: @escaping (StatsSummary?) -> Void) {
         genericOauthCall(.StatsSummary(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -48,7 +48,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsTopTasks object
      :return: No return value
      */
-    public func statsTopPosts(parameters:[statsSummaryParameters]? = nil, completionHandler: (StatsTopTasks?) -> Void) {
+    public func statsTopPosts(_ parameters:[statsSummaryParameters]? = nil, completionHandler: @escaping (StatsTopTasks?) -> Void) {
         genericOauthCall(.StatsTopTasks(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -61,7 +61,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsVideo object
      :return: No return value
      */
-    public func statsVideo(parameters:[basicContextParameters]? = nil, videoId: String, completionHandler: (StatsVideo?) -> Void) {
+    public func statsVideo(_ parameters:[basicContextParameters]? = nil, videoId: String, completionHandler: @escaping (StatsVideo?) -> Void) {
         genericOauthCall(.StatsVideo(pdict(parameters), videoId), completionHandler: completionHandler)
     }
 
@@ -73,7 +73,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsReferrer object
      :return: No return value
      */
-    public func statsReferrers(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsReferrer?) -> Void) {
+    public func statsReferrers(_ parameters:[statsReferrersParameters]? = nil, completionHandler: @escaping (StatsReferrer?) -> Void) {
         genericOauthCall(.StatsReferrers(pdict(parameters)), completionHandler: completionHandler)
     }
     
@@ -85,7 +85,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsClicks object
      :return: No return value
      */
-    public func statsClicks(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsClicks?) -> Void) {
+    public func statsClicks(_ parameters:[statsReferrersParameters]? = nil, completionHandler: @escaping (StatsClicks?) -> Void) {
         genericOauthCall(.StatsClicks(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -97,7 +97,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsTags object
      :return: No return value
      */
-    public func statsTags(parameters:[statsTagsParameters]? = nil, completionHandler: (StatsTags?) -> Void) {
+    public func statsTags(_ parameters:[statsTagsParameters]? = nil, completionHandler: @escaping (StatsTags?) -> Void) {
         genericOauthCall(.StatsTags(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -109,7 +109,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsAuthors object
      :return: No return value
      */
-    public func statsAuthors(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsAuthors?) -> Void) {
+    public func statsAuthors(_ parameters:[statsReferrersParameters]? = nil, completionHandler: @escaping (StatsAuthors?) -> Void) {
         genericOauthCall(.StatsAuthors(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -121,7 +121,7 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsComments object
      :return: No return value
      */
-    public func statsComments(parameters:[basicContextParameters]? = nil, completionHandler: (StatsComments?) -> Void) {
+    public func statsComments(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (StatsComments?) -> Void) {
         genericOauthCall(.StatsComments(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -133,11 +133,11 @@ public extension EVWordPressAPI {
      :param: completionHandler A code block that will be called with the StatsVideoPlays object
      :return: No return value
      */
-    public func statsVideoPlays(parameters:[statsReferrersParameters]? = nil, completionHandler: (StatsVideoPlays?) -> Void) {
+    public func statsVideoPlays(_ parameters:[statsReferrersParameters]? = nil, completionHandler: @escaping (StatsVideoPlays?) -> Void) {
         genericOauthCall(.StatsVideoPlays(pdict(parameters)), completionHandler: completionHandler)
     }
 
-    public func statsPost(parameters:[basicContextParameters]? = nil, completionHandler: (StatsPost?) -> Void) {
+    public func statsPost(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (StatsPost?) -> Void) {
         genericOauthCall(.StatsPost(pdict(parameters)), completionHandler: completionHandler)
     }
 

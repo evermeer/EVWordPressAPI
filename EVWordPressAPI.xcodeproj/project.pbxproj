@@ -32,6 +32,7 @@
 		7F3EA769ABBEB72901F5D030 /* Pods_EVWordPressAPIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CFF39F5D3D3CBD79C9C4DE /* Pods_EVWordPressAPIDemo.framework */; };
 		7F655AFA1B680603003FF992 /* WordPressRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */; };
 		7F655AFB1B68A231003FF992 /* WordPressRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */; };
+		7F69B9591DBCE4460000B9D3 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 7F69B9581DBCE4460000B9D3 /* .swift-version */; };
 		7F7CFCF81B5F839100A42318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CFCF71B5F839100A42318 /* AppDelegate.swift */; };
 		7F7CFCFA1B5F839100A42318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7CFCF91B5F839100A42318 /* ViewController.swift */; };
 		7F7CFCFD1B5F839100A42318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7CFCFB1B5F839100A42318 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		7F159E001BA3140D00247CB1 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		7F159E021BA6E16C00247CB1 /* EVWordpressParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWordpressParameters.swift; sourceTree = "<group>"; };
 		7F655AF91B680603003FF992 /* WordPressRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPressRequestConvertible.swift; sourceTree = "<group>"; };
+		7F69B9581DBCE4460000B9D3 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		7F7CFCF21B5F839100A42318 /* EVWordPressAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVWordPressAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7CFCF61B5F839100A42318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7CFCF71B5F839100A42318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				7F159DFF1BA3140D00247CB1 /* .gitignore */,
 				7F159E001BA3140D00247CB1 /* .travis.yml */,
+				7F69B9581DBCE4460000B9D3 /* .swift-version */,
 				7F7CFD171B5F84C300A42318 /* EVWordPressAPI.podspec */,
 				7F7CFD181B5F84C300A42318 /* LICENSE */,
 				7F7CFD191B5F84C300A42318 /* Podfile */,
@@ -221,12 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F7CFD111B5F839100A42318 /* Build configuration list for PBXNativeTarget "EVWordPressAPIDemo" */;
 			buildPhases = (
-				B5961E52D177D3808186EC69 /* 📦 Check Pods Manifest.lock */,
+				B5961E52D177D3808186EC69 /* [CP] Check Pods Manifest.lock */,
 				7F7CFCEE1B5F839100A42318 /* Sources */,
 				7F7CFCEF1B5F839100A42318 /* Frameworks */,
 				7F7CFCF01B5F839100A42318 /* Resources */,
-				1AA5DBD4ECC0832E7B3E3016 /* 📦 Embed Pods Frameworks */,
-				8B433700D3756356CCF1221D /* 📦 Copy Pods Resources */,
+				1AA5DBD4ECC0832E7B3E3016 /* [CP] Embed Pods Frameworks */,
+				8B433700D3756356CCF1221D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,12 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F7CFD141B5F839100A42318 /* Build configuration list for PBXNativeTarget "EVWordPressAPITests" */;
 			buildPhases = (
-				36F87124383C6DDA8618B389 /* 📦 Check Pods Manifest.lock */,
+				36F87124383C6DDA8618B389 /* [CP] Check Pods Manifest.lock */,
 				7F7CFD031B5F839100A42318 /* Sources */,
 				7F7CFD041B5F839100A42318 /* Frameworks */,
 				7F7CFD051B5F839100A42318 /* Resources */,
-				229A112597D8C8174482A43D /* 📦 Embed Pods Frameworks */,
-				BBC086DEDDF998B5A478B74B /* 📦 Copy Pods Resources */,
+				229A112597D8C8174482A43D /* [CP] Embed Pods Frameworks */,
+				BBC086DEDDF998B5A478B74B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,14 +267,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = evict;
 				TargetAttributes = {
 					7F7CFCF11B5F839100A42318 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 8829GZ84Q6;
+						LastSwiftMigration = 0800;
 					};
 					7F7CFD061B5F839100A42318 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 443FV7F3ZK;
+						LastSwiftMigration = 0800;
 						TestTargetID = 7F7CFCF11B5F839100A42318;
 					};
 				};
@@ -300,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F69B9591DBCE4460000B9D3 /* .swift-version in Resources */,
 				7F7CFCFD1B5F839100A42318 /* Main.storyboard in Resources */,
 				7F7CFD021B5F839100A42318 /* LaunchScreen.xib in Resources */,
 				7F7CFCFF1B5F839100A42318 /* Images.xcassets in Resources */,
@@ -316,14 +324,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AA5DBD4ECC0832E7B3E3016 /* 📦 Embed Pods Frameworks */ = {
+		1AA5DBD4ECC0832E7B3E3016 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,14 +339,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVWordPressAPIDemo/Pods-EVWordPressAPIDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		229A112597D8C8174482A43D /* 📦 Embed Pods Frameworks */ = {
+		229A112597D8C8174482A43D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,29 +354,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVWordPressAPITests/Pods-EVWordPressAPITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		36F87124383C6DDA8618B389 /* 📦 Check Pods Manifest.lock */ = {
+		36F87124383C6DDA8618B389 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8B433700D3756356CCF1221D /* 📦 Copy Pods Resources */ = {
+		8B433700D3756356CCF1221D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,29 +384,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVWordPressAPIDemo/Pods-EVWordPressAPIDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5961E52D177D3808186EC69 /* 📦 Check Pods Manifest.lock */ = {
+		B5961E52D177D3808186EC69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BBC086DEDDF998B5A478B74B /* 📦 Copy Pods Resources */ = {
+		BBC086DEDDF998B5A478B74B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,8 +497,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -514,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -536,8 +546,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -554,9 +566,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -567,9 +580,11 @@
 			baseConfigurationReference = 09B366ED1C597B4074FD4CFE /* Pods-EVWordPressAPIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8829GZ84Q6;
 				INFOPLIST_FILE = EVWordPressAPIDemo/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.evict.EVWordPressAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -578,9 +593,11 @@
 			baseConfigurationReference = 2E4A5445183443C1678E5E0F /* Pods-EVWordPressAPIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8829GZ84Q6;
 				INFOPLIST_FILE = EVWordPressAPIDemo/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.evict.EVWordPressAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -588,9 +605,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4034F8ED1A9C602ED9358FB7 /* Pods-EVWordPressAPITests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				INFOPLIST_FILE = EVWordPressAPITests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -598,9 +617,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5D0A3ED0BA3BC10DEC026C2 /* Pods-EVWordPressAPITests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				INFOPLIST_FILE = EVWordPressAPITests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

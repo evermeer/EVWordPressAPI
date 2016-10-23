@@ -24,7 +24,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func follows(parameters:[followsParameters]? = nil, completionHandler: (Users?) -> Void) {
+    public func follows(_ parameters:[followsParameters]? = nil, completionHandler: @escaping (Users?) -> Void) {
         genericOauthCall(.Follows(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -36,7 +36,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func followsMine(parameters:[basicContextParameters]? = nil, completionHandler: (Following?) -> Void) {
+    public func followsMine(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Following?) -> Void) {
         genericOauthCall(.FollowsMine(pdict(parameters)), completionHandler: completionHandler)
     }
 

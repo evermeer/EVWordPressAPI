@@ -25,7 +25,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func category(category:String?, parameters:[basicContextParameters]? = nil, completionHandler: (Taxonomy?) -> Void) {
+    public func category(category:String?, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Taxonomy?) -> Void) {
         genericCall("/sites/\(self.site)/categories/slug:\(category)", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -39,7 +39,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func categories(parameters:[basicContextParameters]? = nil, completionHandler: (Categories?) -> Void) {
+    public func categories(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Categories?) -> Void) {
         genericCall("/sites/\(self.site)/categories/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -52,7 +52,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func tags(parameters:[tagsParameters]? = nil, completionHandler: (Tags?) -> Void) {
+    public func tags(_ parameters:[tagsParameters]? = nil, completionHandler: @escaping (Tags?) -> Void) {
         genericCall("/sites/\(self.site)/tags/", parameters:parameters, completionHandler: completionHandler)
     }
 
@@ -65,7 +65,7 @@ public extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Posts object
     :return: No return value
     */
-    public func tag(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: (Taxonomy?) -> Void) {
+    public func tag(tag:String, parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Taxonomy?) -> Void) {
         genericCall("/sites/\(self.site)/tags/slug:\(tag)", parameters:parameters, completionHandler: completionHandler)
     }
 }

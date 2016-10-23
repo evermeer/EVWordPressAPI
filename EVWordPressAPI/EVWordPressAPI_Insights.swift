@@ -22,7 +22,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func insights(parameters:[basicContextParameters]? = nil, completionHandler: (Insights?) -> Void) {
+    public func insights(_ parameters:[basicContextParameters]? = nil, completionHandler: @escaping (Insights?) -> Void) {
         genericOauthCall(.Insights(pdict(parameters)), completionHandler: completionHandler)
     }
 
@@ -35,7 +35,7 @@ extension EVWordPressAPI {
     :param: completionHandler A code block that will be called with the Users object
     :return: No return value
     */
-    public func insightsForSlug(slug:String, parameters:[insightsForSlugParameters]? = nil, completionHandler: (Insights?) -> Void) {
+    public func insightsForSlug(slug:String, parameters:[insightsForSlugParameters]? = nil, completionHandler: @escaping (Insights?) -> Void) {
         genericOauthCall(.InsightsSlug(pdict(parameters), slug), completionHandler: completionHandler)
     }
 
