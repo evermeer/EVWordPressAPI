@@ -1,4 +1,4 @@
-#EVWordPressAPI
+# EVWordPressAPI
 
 A Swift implementation of the WordPress (Jetpack) API.
 
@@ -16,12 +16,12 @@ A Swift implementation of the WordPress (Jetpack) API.
 
 [![Git](https://img.shields.io/badge/GitHub-evermeer-blue.svg?style=flat)](https://github.com/evermeer)
 [![Twitter](https://img.shields.io/badge/twitter-@evermeer-blue.svg?style=flat)](http://twitter.com/evermeer)
-[![LinkedIn](https://img.shields.io/badge/linkedin-Edwin Vermeer-blue.svg?style=flat)](http://nl.linkedin.com/in/evermeer/en)
+[![LinkedIn](https://img.shields.io/badge/linkedin-Edwin%20Vermeer-blue.svg?style=flat)](http://nl.linkedin.com/in/evermeer/en)
 [![Website](https://img.shields.io/badge/website-evict.nl-blue.svg?style=flat)](http://evict.nl)
-[![eMail](https://img.shields.io/badge/email-edwin@evict.nl-blue.svg?style=flat)](mailto:edwin@evict.nl?SUBJECT=About EVReflection)
+[![eMail](https://img.shields.io/badge/email-edwin@evict.nl-blue.svg?style=flat)](mailto:edwin@evict.nl?SUBJECT=About%20EVWordPressAPI)
 
 
-#Intro
+# Intro
 
 EVWordPressAPI maps WordPress (Jetpack) API calls to method calls where the result is returnd as easy to use Objects
 
@@ -29,7 +29,7 @@ For more information see the [WordPress API documentation](https://developer.wor
 
 The test calls that require authentication will be executed from the demo app. You have to configure the Oauth2Settings. See the ViewController.swift for more information. The calls that do not require authentication are tested from the unittests in EVWordPressAPITests.swift
 
-#Dependencies
+# Dependencies
 The EVWordPressAPI is using the folowing (cocoapods) libraries:
 
 - The network functionality is handled using the [Alamofire](https://github.com/Alamofire/Alamofire) library.
@@ -38,7 +38,7 @@ The EVWordPressAPI is using the folowing (cocoapods) libraries:
 - Result object mapping is done using the [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects) library
 - The [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects) library is using the [EVReflection](https://github.com/evermeer/EVReflection) library
 
-#Progress
+# Progress
 This project started as a trial for [AlamofireJsonToObjects](https://github.com/evermeer/AlamofireJsonToObjects). There are more than 100 wordpress API callse. It will take some time to map all of these (help is welcome :) ). So far only the folowing API calles are implemented:
 
 API sections - status (for now only the get calls)
